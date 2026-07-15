@@ -1,5 +1,7 @@
 .venv/
 data/
 .env
+rsa_key.p8
+*.p8
 __pycache__/
 *.pyc
