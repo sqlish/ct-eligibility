@@ -25,7 +25,7 @@ FILTER_PHASE = None   # filter.phase is rejected by the live v2 API — phase is
 FILTER_STATUS = None                # e.g. "RECRUITING|COMPLETED", or None for all
 STUDY_TYPE = None     # filter.advanced likewise — study type is filtered in SQL
 SORT = "LastUpdatePostDate:desc"   # most recently updated first
-MAX_STUDIES = 2000                 # hard cap so you can't runaway-fetch
+MAX_STUDIES = 20                 # hard cap so you can't runaway-fetch
 PAGE_SIZE = 100                     # max 1000; 100 keeps progress legible
 SLEEP_SECONDS = 0.25                # be a good citizen, no API key required
 
