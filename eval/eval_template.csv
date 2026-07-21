@@ -1,0 +1,732 @@
+nct_id,title,inclusion_text,exclusion_text,min_bmi,max_bmi,hba1c_threshold,requires_diabetes,excludes_diabetes,excludes_prior_bariatric_surgery,excludes_pregnancy
+NCT00923819,4XL Study - Obesity Surgery in Adolescence,"Inclusion Criteria:
+
+* Between 13 and 18 years of age at inclusion
+* Tanner stage 4-5
+* BMI \> 40 kg/m2 or BMI \> 35 with at least one comorbidity (type 2-diabetes, obstructive sleep apnea, serious hypertension or cerebral pseudotumor)
+* At least one year multidisciplinary treatment completed
+
+","Exclusion Criteria:
+
+* Tanner stage \< 4
+* Substantial risk for lack of compliance
+* Obesity syndrome (e.g., Prader Willi syndrome)
+* Obesity related to brain damage
+* Serious general disease
+* Monogenic obesity",35,,,FALSE,FALSE,FALSE,FALSE
+NCT01809288,Identifying Risk for Diabetes and Heart Disease in Women,"INCLUSION CRITERIA FOR PRIMARY PROTOCOL:
+* African, African-American and White Women
+* Healthy Volunteers
+* Age between 25 and 65 years
+* BMI between 20 and 45 kg/m(2)
+* Federal Employees-Intramural or Extramural or Contractor
+
+INCLUSION CRITERIA FOR NESTED INPATIENT STUDY
+
+Same as primary outpatient protocol except:
+
+* Age restricted to 25 to 50 years
+* BMI restricted to 25 and 45 kg/m2
+* Premenopausal status
+
+","EXCLUSION CRITERIA:
+
+* Pregnancy
+* Medications or Medical Conditions which affect parameters under investigation",20,45,,FALSE,FALSE,FALSE,TRUE
+NCT03344718,Metabolic Syndrome and Vitamin D Level in Old People,"Inclusion Criteria:
+
+* more than 65-year-old
+
+","Exclusion Criteria:
+
+* excluding empty houses, death, non-ambulatory subjects (subjects with significant disabilities, such as handicapped cerebral vascular accident, cancerous cachexia, unstable chronic diseases or psychiatric disorders, severe arthritis or inflammatory disease), uncomfortable anorexia by any medications, and non-reachable subjects",,,,FALSE,FALSE,FALSE,FALSE
+NCT04385615,Fasting Mimicking Diet and Beige/Brown Adipose Tissue in Humans,"Inclusion Criteria:
+
+* Body mass index (BMI) ≥ 25 and \< 30kg/m2.
+
+","Exclusion Criteria:
+
+* Residing outside of Campinas county;
+* Pregnant or lactating women;
+* Patients with severe, non-stabilized neurological or psychiatric problems;
+* Use of anti-obesity or lipid-lowering medication;
+* Use of adrenergic or benzodiazepine drugs;
+* Use of illicit drugs;
+* Individuals with neoplasms, transmissible diseases, rheumatic disease, hepatic or renal insufficiency, non-treated thyroid dysfunction, diabetes mellitus, cardiovascular disease, history of fainting, active infection;
+* Individuals who are allergic to nuts, soybean, oats, sesame or celery;
+* Individuals who have had a change of more than 5% of their body weight in the last six months;
+* Individuals who are carrying some kind of diet or modification to their habitual eating habits.",25,30,,FALSE,FALSE,TRUE,TRUE
+NCT04793334,Underlying Mechanisms of Obesity-induced Obstructive Sleep Apnea,"Inclusion Criteria:
+
+* \- Men and women
+* Ages \>= 18-65 years old
+* BMI 35 kg/m2--and above
+* Scheduled for sleeve gastrectomy (bariatric surgery)
+
+","Exclusion Criteria:
+
+* Any cardiovascular, pulmonary or renal disease other than well-controlled hypertension or asthma.
+* Pregnancy
+* Currently smoking
+* Any respiratory disorder other than OSA or well controlled asthma
+* contraindication to MRI",35,,,FALSE,FALSE,FALSE,TRUE
+NCT05225233,tDCS With Cognitive Training to Reduce Impulsivity and Weight in Veterans With Obesity,"Inclusion Criteria:
+
+* Veteran enrolled in a MOVE! Weight Management Program (group or individual) at the Minneapolis VA Health Care System
+* Obese (BMI\>30 or BMI\>27 plus at least one weight-related comorbidity)
+* Adults, ages 18 years or older (up to age 80)
+* Able to understand English, self-consent and follow study-related procedures
+* Willing to use a reliable form of birth control if they are of females of child-bearing potential
+
+","Exclusion Criteria:
+
+* History of any of the following: seizures, severe or moderate head injury, head surgery, significant neurological disorder (significance based on Principal Investigator's judgment)
+* Frequent severe headaches
+* History of scalp conditions such as eczema or seborrheic dermatitis
+* Metal in head (other than in mouth) including shrapnel/surgical clips/welding fragments
+* Implanted medical devices (including pumps and cardiac pacemakers)
+* Pregnancy
+* Acute substance dependence or withdrawal that would affect ability to complete cognitive training
+* Moderately severe to severe depression (as identified on PHQ-9 scale during baseline screening)
+* Other psychological or medical disorders requiring inpatient treatment (as identified during chart review)
+* Presence of a known metabolic or hormonal disorder (such as Cushing's, untreated thyroid dysfunction, or uncontrolled diabetes mellitus defined as a hemoglobin A1c \> 8.0), or significant edema/volume overload - all of which would affect weight
+* Uncontrolled hypothyroidism that would affect weight",27,,,FALSE,FALSE,FALSE,TRUE
+NCT05459909,The Effect of Synbiotic and Diet Modification Among Overweight or Obese Hong Kong Chinese,"Inclusion Criteria:
+
+* Waist circumference ≥90cm in men and ≥80cm in women
+* BMI \>23.0kg/m2
+
+","Exclusion Criteria:
+
+* Practicing dietary restrictions
+* Using cholesterol-lowering, antihypertensive, anti-inflammatory drugs or Chinese medicines
+* Consuming laxatives, any gastrointestinal medication, probiotics, prebiotics, synbiotics or antibiotics
+* Smokers
+* Alcohol abuser
+* Currently pregnant or lactating",23,,,FALSE,FALSE,FALSE,TRUE
+NCT05774756,A Trial of Setmelanotide in Acquired Hypothalamic Obesity,"Inclusion Criteria:
+
+1. Documented evidence of acquired hypothalamic obesity (HO)
+2. Age 4 years and older
+3. Weight gain associated with the hypothalamic injury and a BMI of ≥30 kg/m2 for patients ≥18 years of age or BMI ≥95th percentile for age and sex for patients 4 to \<18 years of age
+4. Agree to use a highly effective form of contraception throughout the study and for 90 days after the study
+
+Key","Exclusion Criteria:
+
+1. Diagnosis of Prader-Willi syndrome (PWS) or Rapid-onset obesity with hypoventilation, hypothalamic, autonomic dysregulation, neuroendocrine tumor syndrome (ROHHADNET)
+2. Weight loss \>2% in the previous 3 months for patients aged ≥18 years or \>2% reduction in BMI for patients aged 4 to \<18 years
+3. Bariatric surgery or procedure within last 2 years
+4. Diagnosis of severe psychiatric disorders; any suicidal ideation, attempt or behavior
+5. Current, clinically significant pulmonary, cardiac, metabolic, or oncologic disease
+6. Significant dermatologic findings relating to melanoma or pre-melanoma skin lesions (excluding non-invasive basal or squamous cell lesion)
+7. History or close family history of skin cancer or melanoma
+8. Participation in any clinical trial with an investigational drug/device within 3 months prior to the first trial dose
+9. Previously enrolled in a clinical trial involving setmelanotide or any previous exposure to setmelanotide
+10. Inability to comply with once daily (QD) injection regimen
+11. If female, pregnant and/or breastfeeding
+12. Patients with obesity attributable to other genetic or syndromic conditions (eg, PPL \[POMC, PCSK1, LEPR, collectively\], BBS) prior to the hypothalamic injury.
+13. If receiving hormone replacement therapy, dose has remained stable for at least 2 months before Screening
+
+Other protocol defined Inclusion/Exclusion criteria may apply.",30,,,FALSE,FALSE,TRUE,TRUE
+NCT05985486,Brain Outcomes With Lifestyle Change in Down Syndrome,"Inclusion Criteria:
+
+* Diagnosis of Down syndrome
+* BMI of 25 to 50 kg/m2
+* Ability to communicate through spoken language.
+* Ability to come to the University of Kansas Medical Center 3 times across 1 year for outcomes testing
+* Living at home with a parent/guardian, or in a supported living environment with a caregiver who assists with food shopping, meal planning, and meal preparation and agrees to serve as a study partner including providing transportation to our facilities for study assessments.
+
+","Exclusion Criteria:
+
+* Diagnosis of dementia
+* Insulin dependent diabetes
+* Participation in a weight management program involving diet or physical activity in the past 6 mos.
+* Dairy allergy
+* Serious medical risk (e.g., cancer, recent heart attack, stroke, pregnancy, angioplasty)
+* Unwilling to be randomized
+* Contraindications for MRI, including metal implants or devices incompatible with MRI such as pacemakers, claustrophobia, and inability to lay in a supine position
+* Use of GLP-1 medications
+* Use of anti-amyloid medications",25,50,,FALSE,TRUE,FALSE,FALSE
+NCT06019832,Analysis of Varus Collapse in Obese Patients With Stem and Non-Stem Tibial Components Following Primary Total Knee Arthroplasty,"Inclusion criteria:
+
+* Female adult patients with severe osteoarthritis scheduled to have primary total knee arthroplasty
+* Age 40 or older
+* 35 kg/m2 and above
+* Only patients from the PI's clinic will be included.
+* Women who are still menstruating and are currently on contraceptives and women who are in menopause.
+
+","Exclusion Criteria:
+
+* Patients who have some active local or widespread infection (including secondary or inflammatory osteoarthritis)
+* medical conditions that put them at risk of complications or death during and after the study would not be eligible for surgery
+* Patients with previous knee surgery on arthroplasty site will be excluded
+* Pregnant patients and women who are capable of getting pregnant",35,,,FALSE,FALSE,FALSE,TRUE
+NCT06119516,Transpulmonary Pressure - Guided Mechanical Ventilation in Morbidly Obese ARDS Patients: a Feasibility Study.,"Inclusion Criteria:
+
+* Adult patient (aged 18 years or older)
+* Class III morbid obesity (BMI \> 40 kg/m2)
+* Moderate or severe ARDS criteria (according to the Berlin definition)
+* Less than 72 hours between fulfilling moderate or severe ARDS criteria and inclusion
+* Tracheal intubation and invasive mechanical ventilation
+* Informed consent (patient, next of kin), with possibility of an emergency procedure with deferred consent
+* Covid-19 and non-Covid-19 patients
+
+","Exclusion Criteria:
+
+* Contra-indication to nasogastric tube (uncontrolled coagulopathy, severe thrombocytopenia, nasal trauma, esophageal varices)
+* Order to limit life-sustaining therapy
+* ExtraCorporal Membrane Oxygenation (ECMO) in use
+* Invasive mechanical ventilation \> 96 hours
+* Elevated intracranial pressure
+* Active air-leak: pneumothorax, pneumomediastinum
+* Pregnancy or breast feeding
+* Patient on state medical aid",40,,,FALSE,FALSE,FALSE,TRUE
+NCT06199635,Early Feasibility for Safety & Device Functionality of SFM Anastomosis Device Used in 3 Procedures (SNAP-S) or (SNAP-PS) or (J-J),"Inclusion Criteria:
+
+* All Subjects:
+
+  1. Age 18-65 years at screening
+  2. For the primary or post sleeve gastrectomy Anastomosis procedures (SNAP-S/SNAP-PS)- Obesity with Body Mass Index (BMI) ≥ 35 kg/m2 but ≤ 55 kg/m2 at time of screening with or without comorbidities at time of screening. If subject has obesity-related comorbidities such as hypertension, dyslipidemia, and sleep apnea, these comorbidities must be well-controlled
+  3. For the Roux-en-Y gastric bypass jejuno-jejunostomy procedure (J-J) - Obesity with Body Mass Index (BMI) ≥ 35 kg/m2 but ≤50 kg/m2 with or without comorbidities at time of screening. If subject has obesity-related comorbidities such as hypertension, dyslipidemia, and sleep apnea, these comorbidities must be well-controlled.
+  4. Able to understand and sign informed consent document
+  5. Patient lives, and intends to remain, within a 150-km radius of study center for 12 months
+  6. Willing to commit to sustained healthy behaviors that include diet, eating and exercise habits for the duration of the trial
+  7. Willing to refrain from smoking during the study follow-up period
+  8. If subject is female, she must commit to not becoming pregnant for 12 months and agree to use of contraceptives during this period and may not be nursing
+
+","Exclusion Criteria:
+
+* 1\. Known or suspected allergy to nickel, titanium or Nitinol
+
+  2\. Type 1 Diabetes
+
+  3\. Uncontrolled T2DM Fasting glucose ≥ 200 mg/dl (11.1 mmol/L) and/or hemoglobin A1c \>10 or use of injectable insulin
+
+  4\. Any documented conditions for which endoscopy and/or laparoscopy would be contraindicated or history of previous technically difficult or failed endoscopy
+
+  5\. Contraindication to general anesthesia
+
+  6\. Clinically significant finding during procedural endoscopy such as presence of an unhealed ulcers, bleeding lesions, tumors or ischemic or necrotic tissue at target magnet deployment site
+
+  7\. Congenital or acquired anomalies of the GI tract, including atresia, stenosis, prior obstruction or malrotation
+
+  8\. Presence of a duodenal diverticulum (\>10mm)
+
+  9\. Any previous major surgery on the stomach, duodenum, hepatobiliary tree (excluding laparoscopically removed gallbladder), pancreas or right colon
+
+  10\. History of chronic gastrointestinal disease (e.g., cirrhosis, inflammatory bowel disease) that in the opinion of the Investigator may preclude safe and complete study participation
+
+  11\. Uncontrolled severe hypertension (blood pressure \>160/100mmHg)
+
+  12\. Pre-existing severe comorbid cardio-respiratory disease (e.g., congestive heart failure, uncontrolled cardiac arrhythmia, coronary artery disease, chronic obstructive lung disease requiring supplemental oxygen, pulmonary embolism, Myocardial Infarction with prior 6 months)
+
+  13\. Liver biochemistries (ALT and AST) ≥ 3 times the upper limit of normal
+
+  14\. Uncorrectable coagulation disorder (platelets \< 100,000, PT \>2 seconds above upper normal limit or INR \>1.5) at time of procedure, Note: management of anti-platelet medications, when applicable, will follow standard practices of the institution
+
+  15\. Uncorrectable anemia (Hemoglobin \< 11 g/dL in women and \<12.5 g/dL in men)
+
+  16\. Specific genetic or hormonal cause of obesity such as Prader -Willi syndrome
+
+  17\. For females of child-bearing potential: Pregnancy or desire to be pregnant during the study
+
+  18\. Concurrent condition anticipated to require MR imaging within the first 2 months after the study procedure
+
+  19\. Diagnosed Bulimia Nervosa or Binge Eating Disorder (using DSM-5 criteria)
+
+  20\. Physical or mental disability or psychological illness that in the opinion of the Investigator would be a contraindication for bariatric surgery
+
+  21\. Subject is immunocompromised (e.g., active treatment for malignancies, hematologic malignancy, on immunosuppressive therapy, moderate or severe primary immunodeficiency, advanced or untreated HIV, active treatment with high-dose corticosteroids (i.e.,20 or more mg of prednisone or equivalent per day when administered for 2 or more weeks prior to surgery) or other immunosuppressive or immunomodulatory agents.
+
+  22\. Subject has an active or suspected infection at the surgical site or a CDC Class 3/contaminated or Class 4/dirty-infected surgical wound. Subject is not appropriate for inclusion in the clinical trial, per the medical opinion of the Principal Investigator""
+
+  23\. Other prior or concurrent conditions that in the opinion of the Investigator would be unlikely to receive clinical benefit from the study procedure or participation in the study may compromise patient safety or study objectives such as the presence/diagnosis of a severe and evolutive life threatening pathology unrelated to obesity including but not limited to: ongoing infection, chronic pancreatitis, severe hepatic dysfunction, or renal dysfunction (GFR \<60mL/min/1.73m2)
+
+  24\. Any form of substance abuse or psychiatric disorder that in the opinion of the investigator could interfere with the conduct of the study
+
+  25\. (Women only) Pregnancy at screening (+ urine hCG) or unwilling to use contraception throughout study period",35,55,,FALSE,TRUE,FALSE,TRUE
+NCT06200896,"Early Feasibility Study: Assessment of Self-Forming Magnetic Anastomosis Device and Delivery System (SFM) in Obese Patients, When Used to Create a Duodenal-Ileal Anastomosis Post SG (SNAP-PS), or Used to Create a Jejuno-Jejunal (J-J) Anastomosis","Inclusion Criteria:
+
+1. Age 18-65 years at screening
+2. For the post sleeve gastrectomy diversion procedures (SNAP-PS)- Obesity with Body Mass Index (BMI) ≥ 40 kg/m2 but ≤ 55 kg/m2 at time of screening with or without comorbidities at time of screening. If subject has obesity-related comorbidities such as hypertension, dyslipidemia, and sleep apnea, these comorbidities must be well-controlled..
+3. For the Roux-en-Y gastric bypass jejuno-jejunostomy procedure (J-J) - Obesity with Body Mass Index (BMI) ≥ 35.1 kg/m2 but ≤50 kg/m2 with or without comorbidities at time of screening. If subject has obesity-related comorbidities such as hypertension, dyslipidemia, and sleep apnea, these comorbidities must be well-controlled.
+4. Able to understand and sign informed consent document
+5. Patient lives, and intends to remain, within a 150-km radius of study center for 24 months
+6. Willing to commit to sustained healthy behaviors that include diet, eating and exercise habits for the duration of the trial
+7. Willing to refrain from smoking during the study follow-up period
+8. If subject is female, she must commit to not becoming pregnant for 24 months and agree to use of contraceptives during this period and may not be nursing
+
+","Exclusion Criteria:
+
+1. Known or suspected allergy to nickel, titanium or Nitinol
+2. Type 1 Diabetes
+3. Uncontrolled T2DM Fasting glucose ≥ 200 mg/dl (11.1 mmol/L) and/or hemoglobin A1c \>10 or use of injectable insulin
+4. Any documented conditions for which endoscopy and/or laparoscopy would be contraindicated or history of previous technically difficult or failed endoscopy
+5. Contraindication to general anesthesia
+6. Clinically significant finding during procedural endoscopy such as presence of an unhealed ulcers, bleeding lesions, tumors or ischemic or necrotic tissue at target magnet deployment site
+7. Congenital or acquired anomalies of the GI tract, including atresias, stenosis, prior obstruction or malrotation
+8. Presence of a duodenal diverticulum (\>10mm)
+9. Any previous major surgery on the stomach, duodenum, hepatobiliary tree (excluding laparoscopically removed gallbladder), pancreas or right colon
+10. History of chronic gastrointestinal disease (e.g., cirrhosis, inflammatory bowel disease) that in the opinion of the Investigator may preclude safe and complete study participation
+11. Uncontrolled severe hypertension (blood pressure \>160/100mmHg)
+12. Pre-existing severe comorbid cardio-respiratory disease (e.g., congestive heart failure, uncontrolled cardiac arrhythmia, coronary artery disease, chronic obstructive lung disease requiring supplemental oxygen, pulmonary embolism, Myocardial Infarction with prior 6 months)
+13. Liver biochemistries (ALT and AST) ≥ 3 times the upper limit of normal
+14. Uncorrectable coagulation disorder (platelets \< 100,000, PT \>2 seconds above upper normal limit or INR \>1.5) at time of procedure, Note: management of anti-platelet medications, when applicable, will follow standard practices of the institution
+15. Uncorrectable anemia (Hemoglobin \< 11 g/dL in women and \<12.5 g/dL in men)
+16. Specific genetic or hormonal cause of obesity such as Prader -Willi syndrome
+17. For females of child-bearing potential: Pregnancy or desire to be pregnant during the study
+18. Concurrent condition anticipated to require MR imaging within the first 2 months after the study procedure
+19. Diagnosed Bulimia Nervosa or Binge Eating Disorder (using DSM-5 criteria)
+20. Physical or mental disability or psychological illness that in the opinion of the Investigator would be a contraindication for bariatric surgery
+21. Subject is immunocompromised (e.g., active treatment for malignancies, hematologic malignancy, on immunosuppressive therapy, moderate or severe primary immunodeficiency, advanced or untreated HIV, active treatment with high-dose corticosteroids (i.e.,20 or more mg of prednisone or equivalent per day when administered for 2 or more weeks prior to surgery) or other immunosuppressive or immunomodulatory agents.
+22. Subject has an active or suspected infection at the surgical site or a CDC Class 3/contaminated or Class 4/dirty-infected surgical wound.
+23. Subject is not appropriate for inclusion in the clinical trial, per the medical opinion of the Principal Investigator""
+24. Other prior or concurrent conditions that in the opinion of the Investigator would be unlikely to receive clinical benefit from the study procedure or participation in the study may compromise patient safety or study objectives such as the presence/diagnosis of a severe and evolutive life threatening pathology unrelated to obesity including but not limited to: ongoing infection, chronic pancreatitis, severe hepatic dysfunction, or renal dysfunction (GFR \<60mL/min/1.73m2)
+25. Any form of substance abuse or psychiatric disorder that in the opinion of the investigator could interfere with the conduct of the study",35.1,55,,FALSE,TRUE,FALSE,TRUE
+NCT06349460,Trial to Optimize Just-in-Time Adaptive Intervention for Binge Eating & Weight-related Behaviors,"Inclusion Criteria:
+
+* Adults age 18 years or older
+* Obesity (BMI ≥30)
+* Recurrent binge eating (≥12 episodes in the past 3 months)
+* Interested in losing weight and reducing binge eating
+* Willing to use a mobile application
+* Has a smartphone with Internet access and capacity for calls and text messaging
+* Has a valid email address
+* Has access to a scale
+* Not pregnant
+* English-speaking
+
+","Exclusion Criteria:
+
+* Diagnosis for which the study/intervention is not clinically indicated
+* Not currently receiving clinical services for weight management or binge eating",30,,,FALSE,FALSE,FALSE,TRUE
+NCT06564441,"A Study to Test Whether BI 456906 (Survodutide) Influences the Amount of Bupropion, Caffeine and Midazolam in the Blood in People With Overweight or Obesity","Inclusion Criteria :
+
+1. Otherwise healthy male or female subjects according to the assessment of the investigator, as based on a complete medical history including a physical examination, vital signs (blood pressure (BP), pulse rate (PR)), 12-lead electrocardiogram (ECG), and clinical laboratory tests
+2. Age of 18 to 60 years (inclusive) at signing of informed consent
+3. Body mass index (BMI) of 27.0 to 39.9 kg/m² (inclusive) and body weight \> 70 kg
+4. Signed and dated written informed consent in accordance with International Council for Harmonisation - Good Clinical Practice (ICH-GCP) and local legislation prior to admission to the trial, i.e. prior to starting any screening procedures legislation prior to admission to the trial, i.e. prior to starting any screening procedures
+5. Further inclusion criteria apply
+
+","Exclusion Criteria :
+
+1. Any finding in the medical examination (including BP, PR or ECG) deviating from normal and assessed as clinically relevant by the investigator.
+2. Repeated measurement of systolic blood pressure outside the range of 90 to 140 millimetre of mercury (mmHg), diastolic blood pressure outside the range of 50 to 90 mmHg, or pulse rate outside the range of 50 to 90 beats per minute (bpm)
+3. Any laboratory value outside the reference range that the investigator considers to be of clinical relevance and in particular:
+
+   * Alanine aminotransferase (ALT) above upper limit of normal (ULN) + 20%,
+   * Aspartate aminotransferase (AST) above ULN + 20%,
+   * Gamma-Glutamyl-Transferase (GGT) above ULN + 20%,
+   * Lipase or amylase above ULN + 20%,
+   * Estimated glomerular filtration rate (eGFR) \< 80 mL/min/1.73 m².
+4. Any evidence of a concomitant disease assessed as clinically relevant by the investigator
+5. Further exclusion criteria apply",27,39.9,,FALSE,FALSE,FALSE,FALSE
+NCT06571487,Growth Hormone Resistance of Beta-cells A,"Inclusion Criteria:
+
+* Singleton, full term pregnancy within the past 5 years
+* Body mass index ≥18.5 kg/m2 and \<45.0 kg/m2
+
+Group specific inclusion criteria:
+
+* Gestational Diabetes Group: History of gestational diabetes in the most recent pregnancy
+* Control Group: no history of gestational diabetes
+
+","Exclusion Criteria:
+
+* Pregnant, planning to become pregnant during the study, or breastfeeding
+* Current diagnosis or history of type 1 or type 2 diabetes
+* Use of medications that can impact the study outcomes (e.g., GLP-1 receptor agonists)
+* History of bariatric surgery
+* Known, uncontrolled hypothyroidism
+* History of intracranial hypertension, including papilledema, or a condition that increases the risk of developing intracranial hypertension, such as Turner Syndrome, Prader-Willi Syndrome, or renal impairment
+* Current cancer or cancer that has been in remission less than 5 years
+* First degree relative with diabetes diagnosis
+* Evidence of significant anemia or significant end organ dysfunction (e.g., liver, kidney, heart disease)
+* Alcohol use disorder, use of controlled substances, or smoking \>2 cigarettes per day
+* Greater than 3% weight loss within three months of screening or engaged in regular (≥3 days per week), continuous moderate- or high-intensity exercise of ≥30 min duration
+* Mentally disabled persons, prisoners, and persons with inability to grant voluntary informed consent",18.5,45,,TRUE,TRUE,TRUE,TRUE
+NCT06572345,Low EnerGy DiEt iN Adolescents With Obesity and Type 2 Diabetes: The LEGEND Study,"Inclusion criteria
+
+LED intervention
+
+* Diagnosis of T2DM (defined as an HbA1C ≥48mmol/mol, in the absence of features of type 1 or monogenic/syndromic diabetes).
+* Current HbA1C ≥48 (or ≥42 on antidiabetic medication) and ≤ 80 mmol/mol. To allow for the day-to-day variation in HbA1C and differences between point of care laboratory tests, -2 or +2 mmol/mol in the HbA1C result will be allowed in the current criteria if one of them is between or equal to 42-80mmol/mol.
+* Aged 12 to 17 years old.
+* BMI ≥981st centile (+2 SD) for age and sex (UK90 growth reference data).
+* Informed consent:
+
+  * Received from the young person (age 16-17) OR
+  * Received from young person's parent/carer, with patient assent (age 12-15).
+* Willing to engage in and commit to low energy diet, FR and weight management phases including follow-up and attending study visits.
+
+LED Intervention Interviews
+
+The same interview inclusion criteria for LED intervention, with the following additional requirements:
+
+Patients:
+
+* Informed consent:
+
+  * Received from the young person (age 16-17) OR
+  * Received from young person's parent/carer, with patient assent (age 12-15).
+* Willing to take part in a qualitative interview alongside a parent/carer.
+
+Relative/Carer:
+
+* A relative/carer for a young person meeting the above LED participant eligibility criteria.
+* Informed consent from the relative/carer to participate in the interview.
+* Willing to take part in a qualitative interview alongside the young person.
+
+Non-LED Qualitative Interview only participants
+
+* Diagnosis of T2DM (defined as an HbA1C ≥48mmol/mol, in the absence of features of type 1 or monogenic/syndromic diabetes).
+* Current HbA1C ≥48 (or ≥42 on antidiabetic medication) and ≤80 mmol/mol.
+* Aged 12 to 17 years old.
+* BMI ≥91st centile (+2 SD) for age and sex (UK90 growth reference data).
+* Informed consent:
+
+  * Received from the young person (age 16-17) OR
+  * Received from young person's parent/carer, with patient assent (age 12-15).
+* Willing to take part in a qualitative interview alongside a parent/carer only.
+
+HCPs
+
+* Registered HCP.
+* Experience of delivering this trial to the adolescents.
+* Willing to take part in a qualitative interview about undertaking motivational interviewing training and conducting/delivering the LED intervention study.
+
+","Exclusion criteria
+
+LED intervention
+
+* HbA1C greater than 82mmol/mol (to allow for the variation in HbA1c differences).
+* Presence of diabetes-related autoantibodies, as per local centre guidelines.
+* Confirmed mono-genetic cause of obesity (e.g. SIM1 mutation) or diabetes-associated syndrome such as Prader-Willi syndrome, Bardet-Biedl or Wolfram's syndrome.
+* Secondary diabetes (post bone marrow transplant/chemotherapy).
+* Significant psychiatric co-morbidity.
+* Breastfeeding, pregnant or planning to conceive during the LED and FR phases (female participants will be advised on need for effective contraceptive methods during the 12-month study period, section 5.1.1.10).
+* Any other condition which, in the opinion of the study investigator, would make it inappropriate to undertake a period of LED. (All reasons for not approaching patients will be recorded and analysed anonymously. Cases can be discussed with the core study group if there is doubt).
+* Participation in another interventional trial within 6 months.
+* Informed consent and/or assent not received.
+* Pre-existing retinopathy.
+* Dietary avoidance (including, but not limited to, due to allergies, intolerances, religious reasons and lifestyle choices) to any ingredients in the meal replacement products, including lactose.
+* Previous scoliosis repair.
+
+Non-LED Qualitative Interview only participants
+
+* HbA1C greater than 80mmol/mol.
+* Presence of diabetes-related autoantibodies, as per local centre guidelines.
+* Confirmed mono-genetic cause of obesity (e.g. SIM1 mutation) or diabetes-associated syndrome such as Prader-Willi syndrome, Bardet-Biedl or Wolfram's syndrome.
+* Secondary diabetes (post bone marrow transplant/chemotherapy).
+* Significant psychiatric co-morbidity.
+* Breastfeeding, pregnant or planning to conceive during the LED and FR phases (female participants will be advised on need for effective contraceptive methods during the 12-month study period, section 5.1.1.10).
+* Any other condition which, in the opinion of the study investigator, would either make it inappropriate to undertake a period of LED. (All reasons for not approaching patients will be recorded and analysed anonymously. Cases can be discussed with the core study group if there is doubt).
+* Participation in another interventional trial within 6 months.
+* Informed consent and/or assent not received.
+* Pre-existing retinopathy.
+* Dietary avoidance (including, but not limited to, due to allergies, intolerances, religious reasons and lifestyle choices) to any ingredients in the meal replacement products, including lactose.
+* Previous scoliosis repair.
+
+HCPs
+
+• None.",,,42,FALSE,FALSE,FALSE,TRUE
+NCT06723028,Mobile Regulation of Craving Training (mROC-T) to Improve Dietary Intake in Rural Adolescent Girls,"Inclusion Criteria:
+
+* Biologically female
+* Female gender
+* Between the ages of 15y and 18y
+
+","Exclusion Criteria:
+
+* Biologically male
+* Self-identify as male
+* BMI percentile (for age and sex) \< 5th%
+* Diagnosis from a medical profession of any of the following conditions, syndromes, diseases that may affect growth, glucose metabolism, blood clotting, cognitive development\*:
+
+  * Any form of or history of cancer
+  * Any form of diabetes (type I, II, insipidus)
+  * Precocious puberty
+  * Crohn's disease
+  * Congenital heart defect
+  * Cystic fibrosis
+  * Cerebral palsy
+  * Anorexia nervosa
+  * Bulimia nervosa
+  * Active infection
+  * Fever
+  * Hemophilia
+  * Hydrocephalus
+  * intestinal atresia
+  * Jeune syndrome
+  * Klippel-Trénaunay syndrome
+  * Legg-Calvé-Perthes
+  * Long QT syndrome
+  * Muenke syndrome
+  * Myelomeningocele
+  * Necrotizing Enterocolitis
+  * Neutropenia
+  * Non-alcholoic fatty liver diease
+  * Pfeiffer Syndrome
+  * Saethre-Chotzen syndrome
+  * Shwachman-Diamond syndrome
+  * Spinal muscular atrophy
+  * Sturge-Weber syndrome
+  * Ulcerative Colitis
+  * von Willebrand disease
+  * Pancreatitis
+  * Hurler syndrome
+  * Niemann-Pick disease
+  * Tay-Sachs disease
+  * Gaucher disease
+  * Krabbe disease
+  * Zellweger syndrome
+  * Wilson disease
+  * Brachial Plexus Palsy
+  * Brain Abscess or Spinal Abscess
+  * Coarctation of the Aorta
+  * Aortic stenosis
+  * Ventricular septal defect
+  * Patent ductus arteriosus or mitral valve abnormalities
+  * Congenital Adrenal Hyperplasia
+  * Craniofacial Microsomia
+  * Duchenne Muscular Dystrophy
+  * Dyskeratosis Congenita
+  * Galactosemia
+  * Maple syrup urine disease
+  * Phenylketonuria
+  * Turner syndrome
+  * Prader-Wili disease
+  * History of polycystic ovary syndrome
+  * History of thyroid disease (either hyper or hypo)
+  * History of adrenal disease (including Cushing's syndrome, Addison's disease)
+  * Use of medications related to metabolism/weight such as insulin, corticosteroids, growth hormone, sulfonylurea, thiazolidinediones, beta blockers, calcium channel blockers, bupropion, reboxetine, molindone, clozapine, olanzapine, topiramate, zonisamide, valproate, carbamazepine, lithium, hypolipidemic drugs, highly-active antiretroviral therapies",,,,FALSE,TRUE,FALSE,FALSE
+NCT06896682,Cortisol and Obesity - A Vicious Cycle? Hypoglycemia After Bariatric Surgery - Association With Cortisol Metabolism?,"Inclusion Criteria:
+
+Participants must have undergone one of the following bariatric procedures at least 12 months prior:
+
+* Roux-en-Y gastric bypass
+* Gastric sleeve
+
+","Exclusion Criteria
+
+* Pregnancy and breastfeeding
+* Nephrotic syndrome (kidney disease with protein loss in urine), liver cirrhosis, or severe malnutrition, as these conditions reduce cortisol-binding globulin (CBG) levels, affecting total cortisol concentration
+* Use of corticosteroid medications, such as prednisolone
+* Use of opiod-containing medication
+* Use of medications containing estrogen, such as hormone therapy for menopause
+* Known adrenal disease affecting cortisol metabolism, including autonomous cortisol production and Cushing's syndrome
+* Diabetes that does not require medical treatment
+* Previously diagnosed reactive hypoglycemia after bariatric surgery requiring medical treatment",,,,FALSE,TRUE,TRUE,TRUE
+NCT07349381,A Food-Effect Study of CX11 in Healthy Participants,"Inclusion Criteria:
+
+1. Fully understand the objective, nature, methods, and possible adverse reactions of the study; be able to communicate well with the investigator; voluntarily take part in the study and be willing to comply with the requirements of this study; and sign the informed consent form before all study procedures are started
+2. Weight ≥ 50.0 kg for men and ≥ 45.0 kg for women, and body mass index (BMI) is ≥ 20.0 kg/m2 and \< 28 kg/m2 at the screening visit and on Day 21.
+
+","Exclusion Criteria:
+
+1. Participants with allergic constitution or known previous history of allergy to CX11 or similar compounds and related excipients, or history of atopic allergic diseases
+2. Participants who have experienced clinically significant acute diseases during the pre-study screening period or within 2 weeks prior to the first dose of the investigational product
+3. Participants who have pre-existing condition interfering with normal gastrointestinal anatomy or motility, hepatic and/or renal function that could affect drug absorption, distribution, metabolism, and/or excretion as judged by the investigator, or plan to receive any surgery during the study
+4. Participants suffering from any clinically significant chronic diseases, including but not limited to disorders of the respiratory system, cardiovascular system, urinary system, blood system, endocrine system, and immune system, as well as the digestive system (e.g., history of or current fatty liver disease, including metabolic dysfunction-associated steatohepatitis
+5. History of thyroid dysfunction requiring medication or with a thyroid stimulating hormone (TSH) level exceeding the normal reference range at screening or on Day 21
+6. Participants who have been vaccinated within 30 days before the screening or plan to be vaccinated during the study
+7. Participated in any other clinical study and received an investigational intervention within 90 days or 5 elimination half-lives (whichever is longer) of the investigational intervention, prior to screening",20,28,,FALSE,FALSE,FALSE,FALSE
+NCT07412782,REMS25: Study on the Use of REMS Technology in Diseases Commonly Associated With Reduced Bone Mineral Density (BMD),"Inclusion Criteria:
+
+* Written informed consent from adult patients or parents/legal guardians
+* Age between 5 and 18 years
+* Both sexes and all ethnicities
+* Known condition negatively affecting bone health
+
+","Exclusion Criteria:
+
+\- Age below 5 years or over 18 years",,,,FALSE,FALSE,FALSE,FALSE
+NCT07425093,"Investigation of the Relationship Between Gray and White Matter Volumes, Walking Exercise, and Body Fat Percentage in Adults With a Body Mass Index Above 25","Inclusion Criteria:
+
+1. Adults aged 19-65 years
+2. Body Mass Index (BMI) ≥25 kg/m²
+3. Presented to the neurosurgery department with headache complaints between January 1, 2024 and March 1, 2024
+4. Underwent brain magnetic resonance imaging (MRI) between January 1, 2024 and March 1, 2024
+5. Completed baseline blood tests between January 1, 2024 and March 1, 2024, including:
+
+   * Fasting blood glucose
+   * Lipid profile (total cholesterol, LDL, HDL, triglycerides)
+   * Liver enzymes (ALT, AST, GGT)
+   * Thyroid function tests (T3, T4, TSH)
+   * Vitamin B12
+   * Complete blood count (hemogram)
+   * Hemoglobin A1c (HbA1c)
+6. Scheduled for routine 6-month follow-up blood work based on initial test results
+7. Willing to undergo follow-up brain MRI at 12 weeks (costs covered by research team)
+8. Willing and able to attend 6 biweekly nutrition counseling sessions over 12 weeks with the study dietitian
+9. Willing and able to attend 6 biweekly body composition measurement appointments over 12 weeks
+10. No diagnosed chronic conditions including hypertension or diabetes
+11. Owns a smartphone and is proficient in using smartphone applications for heart rate monitoring and step counting
+
+","Exclusion Criteria:
+
+1. Did not present to the neurosurgery department with headache complaints between January 1, 2024 and March 1, 2024
+2. Did not undergo brain MRI between January 1, 2024 and March 1, 2024
+3. Did not complete required baseline blood tests (fasting glucose, lipid profile, liver enzymes, thyroid function, vitamin B12, hemogram, HbA1c) between January 1, 2024 and March 1, 2024
+4. BMI \<25 kg/m²
+5. Unable or unwilling to attend 6 biweekly nutrition counseling sessions over 12 weeks
+6. Unable or unwilling to attend 6 biweekly body composition measurement appointments over 12 weeks
+7. Diagnosed chronic diseases including hypertension or diabetes
+8. Unable to use smartphone applications for heart rate monitoring and step counting, or does not own a smartphone
+9. Physical disabilities that would prevent walking exercise
+10. Current use of antidepressant medications
+11. Currently engaged in regular exercise programs
+12. History of cerebrovascular disease (stroke, transient ischemic attack)
+13. Diagnosis of epilepsy
+14. Diagnosis of Multiple Sclerosis or Alzheimer's disease
+15. Conditions affecting brain ventricular volume (e.g., hydrocephalus)
+16. Pregnancy
+17. Currently breastfeeding",25,,,FALSE,TRUE,FALSE,FALSE
+NCT07465094,"Workplace Health Promotion ""So Healthy, Lose 99"" Weight Loss Activity","Inclusion Criteria:
+
+1. Employees of China Medical University Hospital
+2. Aged 20 to 64
+3. Body Mass Index (BMI) ≥ 27 (kg/ m²)
+
+","Exclusion Criteria:
+
+1. Pregnant women or those planning to become pregnant
+2. Individuals with a history of liver or kidney dysfunction, cardiovascular disease, stroke, or cancer
+3. Individuals before or after major surgery
+4. Individuals with severe mental or neurological disorders",27,,,FALSE,FALSE,FALSE,TRUE
+NCT07547722,Effect of a High-Protein Diet With Meal Replacements on Weight Loss,"Inclusion Criteria:
+
+* Adults aged 25 to 60 years
+* Overweight or obesity
+* Ability to provide informed consent
+* Willingness to follow a calorie-restricted diet program
+* Willingness to comply with study procedures
+
+","Exclusion Criteria:
+
+* Pregnancy or breastfeeding
+* Women of reproductive potential who are not using reliable contraception during the study
+* Severe or uncontrolled cardiovascular disease, including recent myocardial infarction or stroke within the past 6 months, unstable angina, or heart failure
+* Uncontrolled arterial hypertension at screening
+* Severe renal impairment
+* Severe hepatic dysfunction
+* Diabetes requiring insulin therapy or uncontrolled diabetes
+* Active oncological disease or cancer treatment within the past 12 months
+* Acute or chronic inflammatory disease in the acute stage
+* History of gastrointestinal or bariatric surgery affecting absorption or body weight within the past 12 months
+* Severe pulmonary disease in the stage of decompensation Allergy or intolerance to components of the study products, including milk proteins or lactose-containing products Current use of medications or dietary supplements that significantly affect body weight, if discontinuation before study start is not possible Participation in another interventional clinical study within the past 3 months Inability to provide informed consent or comply with the study protocol Significant body weight change, defined as more than 5% gain or loss, within the past 3 months before screening Severe psychiatric disorders or eating disorders that may interfere with participation Active alcohol or substance dependence Chronic use of systemic glucocorticoids or other medications affecting body weight, if discontinuation is not appropriate Planned pregnancy during the study period Uncontrolled thyroid disease Acute infection or febrile illness at screening Clinically significant abnormal laboratory findings at screening that, in the investigator's opinion, make participation unsafe",,,,FALSE,TRUE,TRUE,TRUE
+NCT07556679,PLAY2CONTROL Study,"Inclusion Criteria:
+
+* Patients followed at the University of Miami Pediatric Endocrinology Clinic
+* Must have a diagnosis of Obesity (BMI \>= 95th percentile) and Type 2 Diabetes Mellitus (Hemoglobin A1c \> 6.5%)
+* Children and teenagers, 5-18 years old
+* Young adults 19-21 years old
+
+","Exclusion Criteria:
+
+* Patients who have conditions preventing physical activity (such as physical limitations)
+* Patients without Televisions at home
+* Pregnant females
+* Patients in juvenile detention or prison
+* Adults unable to consent",,,,FALSE,FALSE,FALSE,TRUE
+NCT07561931,Effects of High-frequency Left Dorsolateral Prefrontal rTMS on Heart-brain Coupling in Women With Recurrent Pregnancy Loss and Elevated BMI,"Inclusion Criteria:
+
+* 1.Female participants aged 18-45 years and right-handed.
+* 2.Fulfillment of the prespecified definition of recurrent pregnancy loss in this study, defined as at least two consecutive spontaneous miscarriages occurring before 28 weeks of gestation.
+* 3.BMI ≥24 kg/m², classified as overweight or obesity according to the Chinese adult criteria for overweight and obesity.
+* 4.Currently not pregnant and in a clinically stable condition. If there is a recent history of missed abortion, appropriate management must have been completed and obstetric assessment must confirm the absence of acute vaginal bleeding, infection, marked abdominal pain, or hemodynamic instability.
+* 5.Ability to understand the study procedures, provide written informed consent, and cooperate with scale assessment, transcranial magnetic stimulation safety screening, and the single-session rTMS-ECG protocol.
+
+","Exclusion Criteria:
+
+* 1.Presence of contraindications to transcranial magnetic stimulation or elevated seizure risk, including but not limited to epilepsy or a history of unexplained seizures, intracranial ferromagnetic metal implantation, or the presence of electronic or metallic implanted devices within 30 cm of the coil that are judged unsuitable for transcranial magnetic stimulation.
+* 2.Current pregnancy.
+* 3.Hemodynamic instability or cardiovascular abnormalities that may substantially affect interpretation of the primary endpoint, including systolic blood pressure \>180 mmHg or \<90 mmHg, atrial fibrillation or other clinically significant arrhythmias, valvular heart disease, marked sinus bradycardia, symptomatic coronary artery disease, or other cardiovascular conditions judged by the research team to make participation unsuitable.
+* 4.Uncontrolled major medical or neurologic disorders, particularly those that may substantially affect autonomic state, ECG recording, or interpretation of the primary endpoint, including uncontrolled thyroid dysfunction, uncontrolled diabetes mellitus, significant cerebrovascular disease, neurologic disorders, or active pulmonary disease.
+* 5.Presence of significant suicide risk.
+* 6.Severe psychiatric disorders that may affect study safety or adherence, including schizophrenia spectrum disorders, bipolar disorder during a manic or hypomanic episode, delirium, and active substance use disorder.
+* 7.Severe anxiety or severe depression, defined as a Hamilton Anxiety Rating Scale total score of ≥25 or a 17-item Hamilton Depression Rating Scale total score of ≥24.
+* 8.Recent medication-related confounding risk, including current withdrawal from alcohol, sedative-hypnotics, or other relevant substances, or initiation, discontinuation, or dose adjustment within the preceding 2 weeks of medications that may substantially affect seizure threshold, autonomic function, ECG-related indices, or interpretation of the primary endpoint.
+* 9.Any other condition judged by the research team to make participation inappropriate.",24,,,FALSE,FALSE,FALSE,TRUE
+NCT07581431,"A Phase 1, Evaluate the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of ISM8969","Inclusion Criteria:
+
+Participants must meet all the following criteria to be included in the study:
+
+Inclusion criteria 1\~4 are only for the healthy participants in the SAD and MAD study:
+
+1. Male or female participants, including adult participants (≥18 and \<65 years of age) for the SAD cohorts 1-6 and MAD cohorts 1-3, and elderly participants (≥65 and ≤80 years of age) for MAD cohort 4.
+2. Body mass index (BMI) \>18.5 and \<30.0 kg/m2 and body weight ≥50.0 kg for males and ≥45.0 kg for females.
+3. Non-smokers (no use of tobacco or nicotine products within 1 month prior to screening).
+4. Healthy as defined the current protocol.
+
+   Inclusion criteria 5\~9 are only for the obese participants at risk of cardiovascular disease in MAD study):
+5. Male or female, ≥18 and ≤65 years of age.
+6. 30.0 kg/m2 ≤ BMI \< 42.0 kg/m2.
+7. No change in body weight or self-reported change of less than 5.0% within 3 months before screening.
+8. Presence of 1 or more risk factors for cardiovascular disease such as hypertension, hyperlipidemia. If present, must be controlled with stable medication dose/therapy (defined as a stable medication dose/therapy for 3 months or longer).
+9. hsCRP ≥3 mg/L.
+
+","Exclusion Criteria:
+
+Participants for whom any of the following applies will be excluded from the study:
+
+1. Columbia suicide severity rating scale (C-SSRS) score above Type 1 ideation.
+2. Positive serology test results for hepatitis B surface antigen (HBsAg), hepatitis C virus (HCV) antibody, human immunodeficiency virus (HIV) antigen and antibody, treponema pallidum antibody or QuantiFERON®-TB test at screening.
+3. Positive pregnancy test or lactating female participant.
+4. History of any central nervous system (CNS) disorder or history of seizure of any cause.
+5. Clinically significant 12-lead ECG, physical examination, vital signs or laboratory abnormalities at screening, including but not limited to defined in the protocol.
+6. History of significant cardiovascular or cerebrovascular disease within 6 months before screening, including but not limited to defined in the protocol.
+7. History of an active or untreated malignancy or are in remission from a clinically significant malignancy (other than basal- or squamous-cell skin cancer, or in situ carcinomas of the cervix) for less than 5 years; or there is a potential malignancy during screening.
+8. Participation in a clinical research study involving the administration of an investigational or marketed drug or device within 30 days (or 5 half-lives, whichever is longer) prior to the first dosing, administration of a biological product in the context of a clinical research study within 90 days (or 5 half-lives, whichever is longer) prior to the first dosing, or concomitant participation in an investigational study involving no drug or device administration.
+9. Presence of contraindication to lumbar puncture or lumbar catheter as judged by Investigator.",18.5,30,,FALSE,FALSE,FALSE,TRUE
+NCT07602803,The Effect of GLP1 Agonists on Weight Loss in BBS Cohort in the UK,"Inclusion Criteria:
+
+* All the adult patients with a genetic diagnosis of BBS under the national BBS centres (London and Birmingham in the UK).
+
+","Exclusion Criteria:
+
+* Adult patients with a genetic diagnosis of BBS under the national BBS centres (London and Birmingham in the UK) who lost follow ups or significant missing data, or BMI\<30 in patients without GLP1 agonists.",,,,FALSE,FALSE,FALSE,FALSE
+NCT07634302,Effects of Resveratrol Supplementation Combined With a Low-Calorie Diet in Postmenopausal Women With Obesity and Knee Osteoarthritis,"Inclusion Criteria:
+
+* Postmenopausal women aged 45-75 years.
+* Diagnosed knee osteoarthritis.
+* Obesity, defined as BMI ≥30 kg/m².
+* Ability to comply with the study protocol and dietary recommendations.
+* Written informed consent to participate in the study.
+
+","Exclusion Criteria:
+
+* Allergy or intolerance to grapes, wine, peanuts, resveratrol, or supplement components.
+* Acute infectious or inflammatory disease at screening.
+* Unstable or exacerbated chronic disease requiring treatment changes or hospitalization.
+* Malignancy within the past 5 years.
+* Chronic liver disease, including hepatitis or cirrhosis.
+* Major cardiovascular event within the past 6 months.
+* Alcohol abuse or dependence.
+* Severe psychiatric disorder or cognitive impairment limiting protocol adherence.
+* Use of resveratrol-containing supplements or investigational products within the past 6 months.",30,,,FALSE,FALSE,FALSE,FALSE
+NCT07650409,A Dietary Intervention (Soy Soft Pretzels) for Reducing Chronic Inflammation in Obese Individuals,"Inclusion Criteria:
+
+* Provision of signed and dated informed consent form
+* Stated willingness to comply with all study procedures, lifestyle considerations, and availability for the duration of the study
+* Males sex
+* 18 and 49 years of age
+* Height and weight or calculated BMI for:
+
+  * Obese participants must be ≥ 30 kg/m\^2
+  * Non-obese (healthy) participants must be between 18.5 and 24.9 kg/m\^2
+
+","Exclusion Criteria:
+
+* Inability to comply with all study procedures, lifestyle considerations, and availability for the duration of the study
+* Known allergy or intolerance to soy, wheat, or any other ingredients in study intervention
+* Current or prior history of type 2 diabetes mellitus as defined by International Classification of Diseases, 10th Revision, Clinical Modification (ICD-10-CM) E11
+* Current or prior history of cancer (excluding non-melanoma skin cancers)
+* History of blood clotting disorders or adverse events relating to blood draws
+* Use of antibiotic regime lasting longer than one week within the last six months
+* Current enrollment in other research studies for weight loss
+* Actively trying to lose weight and/or use of medications for weight loss within the last three months
+* Strict veganism (no consumption of animal, fish, or egg products)
+* Heavy alcohol consumption (defined as consumption of \> 14 drinks/week on average)
+* Current or prior history of any condition that causes altered immunity such as chronic inflammatory disease, autoimmune disorders, cancer, anemia, and blood dyscrasias
+* Regular usage of inflammation lowering medications which include but not limited to nonsteroidal anti-inflammatory drugs such as aspirin, ibuprofen, and naproxen, or anti-pyretic medications such as acetaminophen",18.5,,,FALSE,TRUE,FALSE,FALSE
