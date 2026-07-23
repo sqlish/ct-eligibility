@@ -1,8 +1,5 @@
--- ============================================================
--- 01_explore.sql
--- Profile the raw payloads BEFORE writing any AI functions.
--- Run these one at a time in a Snowsight worksheet. Read the output.
--- ============================================================
+-- 01_explore.sql — profile the raw payloads before writing any AI functions.
+-- Run these one query at a time in a Snowsight worksheet.
 
 USE ROLE      ct_engineer;
 USE WAREHOUSE ct_wh;
@@ -10,64 +7,52 @@ USE DATABASE  ct_trials;
 USE SCHEMA    raw;
 
 
--- ------------------------------------------------------------
--- 1. Sanity: did the load land cleanly?
--- ------------------------------------------------------------
+-- did the load land cleanly?
 SELECT
-    COUNT(*)                   AS total_rows,
-    COUNT(DISTINCT nct_id)     AS distinct_trials,
-    COUNT(DISTINCT source_batch) AS batches,
-    MIN(ingested_at)           AS first_load,
-    MAX(ingested_at)           AS last_load
+    COUNT(*)                   AS total_rows,        -- rows loaded
+    COUNT(DISTINCT nct_id)     AS distinct_trials,   -- should equal total_rows (no dupes)
+    COUNT(DISTINCT source_batch) AS batches,         -- how many fetch runs are in here
+    MIN(ingested_at)           AS first_load,        -- earliest load timestamp
+    MAX(ingested_at)           AS last_load          -- most recent load timestamp
 FROM studies_raw;
--- Expect: 2000 / 2000 / 1
+-- expect 2000 / 2000 / 1
 
 
--- ------------------------------------------------------------
--- 2. What does one payload actually look like?
---    Click the cell in Snowsight to expand the JSON tree.
--- ------------------------------------------------------------
+-- eyeball one full payload (click the cell in Snowsight to expand the JSON tree)
 SELECT payload
 FROM studies_raw
 LIMIT 1;
 
 
--- ------------------------------------------------------------
--- 3. Which top-level modules exist, and how often?
---    This tells you what you can rely on vs. what's optional.
--- ------------------------------------------------------------
+-- which top-level modules exist, and in what share of trials — shows what's reliable vs. optional
 SELECT
-    f.key   AS module_name,
-    COUNT(*) AS trials_with_module,
-    ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM studies_raw), 1) AS pct
+    f.key   AS module_name,           -- name of a protocolSection sub-module
+    COUNT(*) AS trials_with_module,   -- how many trials contain it
+    ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM studies_raw), 1) AS pct  -- as a % of all trials
 FROM studies_raw,
      LATERAL FLATTEN(input => payload:protocolSection) f
 GROUP BY 1
 ORDER BY 2 DESC;
 
 
--- ------------------------------------------------------------
--- 4. Pull the fields that matter into a readable shape.
---    Note phases/conditions are ARRAYS — a trial can be PHASE2|PHASE3.
--- ------------------------------------------------------------
+-- pull the fields that matter into a readable shape.
+-- phases/conditions stay as arrays — a trial can be PHASE2|PHASE3.
 SELECT
     nct_id,
-    payload:protocolSection.identificationModule.briefTitle::STRING   AS title,
-    payload:protocolSection.designModule.studyType::STRING            AS study_type,
-    payload:protocolSection.designModule.phases                       AS phases,
-    payload:protocolSection.statusModule.overallStatus::STRING        AS status,
-    payload:protocolSection.conditionsModule.conditions               AS conditions,
-    payload:protocolSection.eligibilityModule.minimumAge::STRING      AS min_age,
-    payload:protocolSection.eligibilityModule.maximumAge::STRING      AS max_age,
-    payload:protocolSection.eligibilityModule.sex::STRING             AS sex,
-    payload:protocolSection.eligibilityModule.healthyVolunteers::BOOLEAN AS healthy_volunteers
+    payload:protocolSection.identificationModule.briefTitle::STRING   AS title,        -- short trial title
+    payload:protocolSection.designModule.studyType::STRING            AS study_type,   -- INTERVENTIONAL / OBSERVATIONAL
+    payload:protocolSection.designModule.phases                       AS phases,       -- array, e.g. ["PHASE2","PHASE3"]
+    payload:protocolSection.statusModule.overallStatus::STRING        AS status,       -- RECRUITING / COMPLETED / ...
+    payload:protocolSection.conditionsModule.conditions               AS conditions,   -- array of conditions studied
+    payload:protocolSection.eligibilityModule.minimumAge::STRING      AS min_age,      -- e.g. "18 Years"
+    payload:protocolSection.eligibilityModule.maximumAge::STRING      AS max_age,      -- e.g. "65 Years" (often absent)
+    payload:protocolSection.eligibilityModule.sex::STRING             AS sex,          -- ALL / FEMALE / MALE
+    payload:protocolSection.eligibilityModule.healthyVolunteers::BOOLEAN AS healthy_volunteers  -- accepts healthy people?
 FROM studies_raw
 LIMIT 20;
 
 
--- ------------------------------------------------------------
--- 5. The filters you pushed downstream. Was that call justified?
--- ------------------------------------------------------------
+-- sanity-check the filters pushed upstream into the fetch script — was dropping them justified?
 SELECT
     payload:protocolSection.designModule.studyType::STRING AS study_type,
     COUNT(*) AS n
@@ -81,47 +66,39 @@ FROM studies_raw,
      LATERAL FLATTEN(input => payload:protocolSection.designModule.phases) f
 GROUP BY 1 ORDER BY 2 DESC;
 
--- Trials with NO phases key at all (observational studies usually):
+-- trials with no phases key at all (usually observational studies)
 SELECT COUNT(*) AS no_phase_key
 FROM studies_raw
 WHERE payload:protocolSection.designModule.phases IS NULL;
 
 
--- ------------------------------------------------------------
--- 6. THE MAIN EVENT: eligibility criteria coverage.
---    If a big chunk are NULL, your usable sample is smaller than 2000.
--- ------------------------------------------------------------
+-- eligibility-criteria coverage: how many trials actually carry the free text we need.
+-- lots of NULLs here would mean the usable sample is smaller than the row count.
 SELECT
     COUNT(*) AS total,
-    COUNT(payload:protocolSection.eligibilityModule.eligibilityCriteria) AS has_criteria,
-    COUNT(*) - COUNT(payload:protocolSection.eligibilityModule.eligibilityCriteria) AS missing
+    COUNT(payload:protocolSection.eligibilityModule.eligibilityCriteria) AS has_criteria,          -- non-null criteria
+    COUNT(*) - COUNT(payload:protocolSection.eligibilityModule.eligibilityCriteria) AS missing     -- trials with none
 FROM studies_raw;
 
 
--- ------------------------------------------------------------
--- 7. How long is the text? This drives your token cost.
---    ~4 chars per token, so avg_chars/4 ≈ input tokens per row.
--- ------------------------------------------------------------
+-- criteria text length -> rough token cost. ~4 chars per token, so avg_chars/4 ≈ input tokens per row.
 WITH c AS (
     SELECT LENGTH(payload:protocolSection.eligibilityModule.eligibilityCriteria::STRING) AS len
     FROM studies_raw
     WHERE payload:protocolSection.eligibilityModule.eligibilityCriteria IS NOT NULL
 )
 SELECT
-    MIN(len)                                    AS min_chars,
-    ROUND(AVG(len))                             AS avg_chars,
-    MEDIAN(len)                                 AS median_chars,
-    PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY len) AS p95_chars,
-    MAX(len)                                    AS max_chars,
-    ROUND(SUM(len) / 4)                         AS est_total_input_tokens
+    MIN(len)                                    AS min_chars,     -- shortest criteria block
+    ROUND(AVG(len))                             AS avg_chars,     -- average length
+    MEDIAN(len)                                 AS median_chars,  -- typical length (robust to outliers)
+    PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY len) AS p95_chars,  -- 95th percentile (the long tail)
+    MAX(len)                                    AS max_chars,     -- longest single block
+    ROUND(SUM(len) / 4)                         AS est_total_input_tokens  -- ballpark total input tokens
 FROM c;
 
 
--- ------------------------------------------------------------
--- 8. Is the text structured at all? Test your assumptions.
---    If these aren't ~100%, you can't just regex/split on headers —
---    which is the argument for using an LLM here at all.
--- ------------------------------------------------------------
+-- is the criteria text structured? if these header rates aren't near 100%, a plain regex
+-- split won't hold — which is exactly the argument for reaching to an LLM on the messy tail.
 WITH c AS (
     SELECT
         nct_id,
@@ -130,23 +107,20 @@ WITH c AS (
     WHERE payload:protocolSection.eligibilityModule.eligibilityCriteria IS NOT NULL
 )
 SELECT
-    COUNT(*)                                          AS n,
-    COUNT_IF(criteria ILIKE '%inclusion criteria%')   AS has_inclusion_header,
-    COUNT_IF(criteria ILIKE '%exclusion criteria%')   AS has_exclusion_header,
+    COUNT(*)                                          AS n,                     -- trials with criteria text
+    COUNT_IF(criteria ILIKE '%inclusion criteria%')   AS has_inclusion_header,  -- has an "inclusion criteria" header
+    COUNT_IF(criteria ILIKE '%exclusion criteria%')   AS has_exclusion_header,  -- has an "exclusion criteria" header
     COUNT_IF(criteria ILIKE '%inclusion criteria%'
-         AND criteria ILIKE '%exclusion criteria%')   AS has_both,
+         AND criteria ILIKE '%exclusion criteria%')   AS has_both,             -- has both (the splittable case)
     COUNT_IF(criteria NOT ILIKE '%inclusion%'
-         AND criteria NOT ILIKE '%exclusion%')        AS has_neither,
-    COUNT_IF(criteria LIKE '%*%')                     AS uses_asterisk_bullets,
-    COUNT_IF(criteria LIKE '%-%')                     AS uses_dash_bullets
+         AND criteria NOT ILIKE '%exclusion%')        AS has_neither,          -- has neither word at all
+    COUNT_IF(criteria LIKE '%*%')                     AS uses_asterisk_bullets, -- bulleted with '*'
+    COUNT_IF(criteria LIKE '%-%')                     AS uses_dash_bullets      -- bulleted with '-'
 FROM c;
 
 
--- ------------------------------------------------------------
--- 9. Read three of them. Actually read them.
---    This is the step people skip, and it's the one that tells you
---    what you're really up against.
--- ------------------------------------------------------------
+-- longest and shortest criteria blocks -- the outliers are where the header-split
+-- assumptions tend to break, so read a few by hand before trusting the aggregates.
 SELECT
     nct_id,
     payload:protocolSection.eligibilityModule.eligibilityCriteria::STRING AS criteria
@@ -154,8 +128,8 @@ FROM studies_raw
 WHERE payload:protocolSection.eligibilityModule.eligibilityCriteria IS NOT NULL
 ORDER BY LENGTH(criteria) DESC
 LIMIT 3;
--- ^ the three longest. Now look at the three shortest:
 
+-- now the short tail:
 SELECT
     nct_id,
     payload:protocolSection.eligibilityModule.eligibilityCriteria::STRING AS criteria
