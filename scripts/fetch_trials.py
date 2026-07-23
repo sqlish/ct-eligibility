@@ -1,10 +1,11 @@
 """
-fetch_trials.py — pull studies from the ClinicalTrials.gov v2 API to local NDJSON.
 
-Lands the FULL raw payload. No parsing will happen here: transformation happens in Snowflake (ELT).
+Pull studies from the ClinicalTrials.gov v2 API to local NDJSON.
 
-Usage:
-    python scripts/fetch_trials.py
+Lands the raw payload untouched; all transformation will happen downstream in Snowflake (ELT).
+
+python scripts/fetch_trials.py
+
 """
 
 import json
@@ -12,28 +13,24 @@ import time
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-
 import requests
-
-
-# CONFIG
 
 BASE_URL = "https://clinicaltrials.gov/api/v2/studies"
 
-QUERY_COND = "obesity"
-FILTER_PHASE = None   # filter.phase is rejected by the live v2 API — phase is filtered in SQL
-FILTER_STATUS = None                # e.g. "RECRUITING|COMPLETED", or None for all
-STUDY_TYPE = None     # filter.advanced likewise — study type is filtered in SQL
-SORT = "LastUpdatePostDate:desc"   # most recently updated first
-MAX_STUDIES = 20                 # hard cap so you can't runaway-fetch
-PAGE_SIZE = 100                     # max 1000; 100 keeps progress legible
-SLEEP_SECONDS = 0.25                # be a good citizen, no API key required
+QUERY_COND = "obesity"    # targeted medical condition to search trials for
+FILTER_PHASE = None       # trial phase filter; None b/c the v2 API rejects it (filtered in SQL instead)
+FILTER_STATUS = None      # recruitment-status filter, e.g. "RECRUITING|COMPLETED"; None = every status
+STUDY_TYPE = None         # study-type filter; None b/c the API rejects it too (filtered in SQL instead)
+SORT = "LastUpdatePostDate:desc"  # order results by newest-updated
+MAX_STUDIES = 200          # stop after fetching this many trials
+PAGE_SIZE = 100           # trials to request per API call (the API caps this at 1000)
+SLEEP_SECONDS = 0.25      # pause between calls so we don't hammer the API
 
-OUT_DIR = Path("data/raw")
-# ============================================================
+OUT_DIR = Path("data/raw")  # folder the NDJSON output file gets written to
 
 
 def build_params(page_token=None):
+    """Assemble the query parameters for a single API request."""
     params = {
         "query.cond": QUERY_COND,
         "pageSize": PAGE_SIZE,
@@ -55,7 +52,7 @@ def build_params(page_token=None):
 
 
 def extract_nct_id(study):
-    """Dig out the NCT ID. Returns None if the shape is unexpected."""
+    """Pull the trial's NCT ID out of a study; return None if it's missing."""
     try:
         return study["protocolSection"]["identificationModule"]["nctId"]
     except (KeyError, TypeError):
@@ -63,6 +60,7 @@ def extract_nct_id(study):
 
 
 def fetch_all():
+    """Page through the API and write each trial as one line of NDJSON."""
     batch_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out_path = OUT_DIR / f"studies_{batch_id}.ndjson"
@@ -88,7 +86,7 @@ def fetch_all():
 
             data = resp.json()
 
-            # First page: sanity-check the response shape and print the total.
+            # confirm shape and log the total before committing to the pull
             if page_num == 1:
                 print(f"Response keys: {list(data.keys())}")
                 print(f"Total matching studies: {data.get('totalCount', 'unknown')}")
@@ -106,12 +104,11 @@ def fetch_all():
                 if not nct_id:
                     skipped += 1
                     continue
-                if nct_id in seen_ids:          # defensive: API shouldn't do this
+                if nct_id in seen_ids:          # shouldn't repeat across pages, double check
                     skipped += 1
                     continue
                 seen_ids.add(nct_id)
 
-                # One JSON object per line, good for streaming into snowflake
                 record = {
                     "nct_id": nct_id,
                     "payload": study,
