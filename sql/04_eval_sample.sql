@@ -1,16 +1,10 @@
--- ============================================================
--- 04_eval_sample.sql
--- Freeze a reproducible 30-trial sample for the extraction eval.
+-- 04_eval_sample.sql — freeze a reproducible 30-trial sample for the extraction eval.
 --
--- Why a fixed table and not just ORDER BY RANDOM():
---   The eval must be reproducible. Anyone cloning the repo should be able
---   to score against the SAME 30 trials the labels correspond to. So we
---   draw once, with a deterministic hash-based order, and persist it.
+-- A fixed table rather than ORDER BY RANDOM(): the eval has to be reproducible, anyone
+-- cloning the repo scores against the SAME 30 trials the labels correspond to.
 --
--- Sampling frame: only BOTH_HEADERS rows. The eval measures fact
--- extraction quality on cleanly-split criteria; the irregular tail is a
--- separate concern (the LLM-fallback split), not what we're scoring here.
--- ============================================================
+-- Sampling frame is BOTH_HEADERS rows only. This measures extraction quality on cleanly-split
+-- criteria; the irregular tail (the LLM-fallback split) is a separate concern, not scored here.
 
 USE ROLE      ct_engineer;
 USE WAREHOUSE ct_wh;
@@ -19,15 +13,15 @@ USE SCHEMA    eval;
 
 CREATE OR REPLACE TABLE eval.eval_sample AS
 SELECT
-    c.nct_id,
-    t.title,
-    c.inclusion_text,
-    c.exclusion_text
+    c.nct_id,          -- trial ID (key, joins to labels and predictions)
+    t.title,           -- trial title, for the human labeler's context
+    c.inclusion_text,  -- inclusion section the labeler reads and the model extracts from
+    c.exclusion_text   -- exclusion section, same
 FROM core.trial_criteria c
 JOIN core.trials t USING (nct_id)
 WHERE c.split_method = 'BOTH_HEADERS'
--- Deterministic pseudo-random order: hash the id, take the same 30 every
--- time. No seed drift, no dependence on table scan order.
+-- deterministic pseudo-random order: hash the id, take the same 30 every time.
+-- no seed drift, no dependence on table scan order.
 ORDER BY MD5(c.nct_id)
 LIMIT 30;
 

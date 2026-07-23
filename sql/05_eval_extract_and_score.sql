@@ -1,21 +1,16 @@
--- ============================================================
--- 05_eval_extract_and_score.sql
--- Run the extraction on the 30 eval trials, then score it against the
--- hand-labeled ground truth in eval.eval_labels.
+-- 05_eval_extract_and_score.sql — run the extraction on the 30 eval trials, then score it
+-- against the hand-labeled ground truth in eval.eval_labels.
 --
--- The extraction is materialized (not a view) so scoring can be re-run
--- without paying for inference again.
--- ============================================================
+-- The extraction is materialized (a table, not a view) so scoring can be re-run without
+-- paying for inference again.
 
 USE ROLE      ct_engineer;
 USE WAREHOUSE ct_wh;
 USE DATABASE  ct_trials;
 USE SCHEMA    eval;
 
--- ------------------------------------------------------------
--- 1. Extract facts for the 30 eval trials (persisted).
---    Same prompt + schema as the production run will use.
--- ------------------------------------------------------------
+-- Extract facts for the 30 eval trials and persist them.
+-- Same prompt + schema as the production run, so the eval measures what production will do.
 CREATE OR REPLACE TABLE eval.eval_predictions AS
 SELECT
     s.nct_id,
@@ -54,27 +49,22 @@ SELECT
 FROM eval.eval_sample s;
 
 
--- ------------------------------------------------------------
--- 2. Flatten predictions into typed columns for comparison.
--- ------------------------------------------------------------
+-- Flatten the JSON predictions into typed columns so they can be compared to the labels.
 CREATE OR REPLACE TABLE eval.eval_pred_flat AS
 SELECT
     nct_id,
-    facts:raw_message:min_bmi::FLOAT                              AS min_bmi,
-    facts:raw_message:max_bmi::FLOAT                              AS max_bmi,
-    facts:raw_message:hba1c_threshold::FLOAT                      AS hba1c_threshold,
-    facts:raw_message:requires_diabetes::BOOLEAN                  AS requires_diabetes,
-    facts:raw_message:excludes_diabetes::BOOLEAN                  AS excludes_diabetes,
-    facts:raw_message:excludes_prior_bariatric_surgery::BOOLEAN   AS excludes_prior_bariatric_surgery,
-    facts:raw_message:excludes_pregnancy::BOOLEAN                 AS excludes_pregnancy
+    facts:raw_message:min_bmi::FLOAT                              AS min_bmi,            -- predicted min BMI (NULL if not stated)
+    facts:raw_message:max_bmi::FLOAT                              AS max_bmi,            -- predicted max BMI
+    facts:raw_message:hba1c_threshold::FLOAT                      AS hba1c_threshold,    -- predicted HbA1c threshold
+    facts:raw_message:requires_diabetes::BOOLEAN                  AS requires_diabetes,  -- diabetes required for inclusion?
+    facts:raw_message:excludes_diabetes::BOOLEAN                  AS excludes_diabetes,  -- diabetes an exclusion?
+    facts:raw_message:excludes_prior_bariatric_surgery::BOOLEAN   AS excludes_prior_bariatric_surgery,  -- prior bariatric surgery an exclusion?
+    facts:raw_message:excludes_pregnancy::BOOLEAN                 AS excludes_pregnancy  -- pregnancy/breastfeeding an exclusion?
 FROM eval.eval_predictions;
 
 
--- ------------------------------------------------------------
--- 3. Per-field accuracy.
---    NULL == NULL counts as a match (both agree "not stated").
---    Numerics compared with a small tolerance for float noise.
--- ------------------------------------------------------------
+-- Per-field accuracy. NULL == NULL counts as a match (both agree "not stated");
+-- numeric fields are compared with a small tolerance to absorb float noise.
 WITH cmp AS (
     SELECT
         l.nct_id,
@@ -101,10 +91,8 @@ UNION ALL SELECT 'excludes_pregnancy',    ROUND(100.0*AVG(IFF(exc_preg_ok,1,0)),
 ORDER BY accuracy_pct;
 
 
--- ------------------------------------------------------------
--- 4. Disagreements, itemized. This is the qualitative half of the eval —
---    read these to characterize *how* it fails, not just how often.
--- ------------------------------------------------------------
+-- Disagreements, itemized — the qualitative half of the eval. One row per label/prediction
+-- mismatch, so you can characterize HOW it fails, not just how often.
 SELECT
     l.nct_id,
     'min_bmi' AS field, TO_VARCHAR(l.min_bmi) AS labeled, TO_VARCHAR(p.min_bmi) AS predicted
@@ -131,9 +119,7 @@ WHERE NOT EQUAL_NULL(l.requires_diabetes, p.requires_diabetes)
 ORDER BY field, nct_id;
 
 
--- ------------------------------------------------------------
--- 5. Headline number: overall field-level accuracy across all 7 fields.
--- ------------------------------------------------------------
+-- Headline number: overall field-level accuracy across all 7 fields (correct fields / total fields).
 WITH cmp AS (
     SELECT
         IFF(EQUAL_NULL(l.min_bmi,p.min_bmi),1,0)
@@ -146,8 +132,8 @@ WITH cmp AS (
     FROM eval.eval_labels l JOIN eval.eval_pred_flat p USING (nct_id)
 )
 SELECT
-    COUNT(*)                                AS trials,
-    COUNT(*) * 7                            AS total_fields,
-    SUM(correct_fields)                     AS correct,
-    ROUND(100.0 * SUM(correct_fields) / (COUNT(*)*7), 1) AS overall_accuracy_pct
+    COUNT(*)                                AS trials,        -- eval trials scored
+    COUNT(*) * 7                            AS total_fields,  -- 7 fields per trial
+    SUM(correct_fields)                     AS correct,       -- fields the model got right
+    ROUND(100.0 * SUM(correct_fields) / (COUNT(*)*7), 1) AS overall_accuracy_pct  -- correct / total, as a %
 FROM cmp;
