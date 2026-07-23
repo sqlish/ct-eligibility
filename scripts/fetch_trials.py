@@ -22,7 +22,7 @@ FILTER_PHASE = None       # trial phase filter; None b/c the v2 API rejects it (
 FILTER_STATUS = None      # recruitment-status filter, e.g. "RECRUITING|COMPLETED"; None = every status
 STUDY_TYPE = None         # study-type filter; None b/c the API rejects it too (filtered in SQL instead)
 SORT = "LastUpdatePostDate:desc"  # order results by newest-updated
-MAX_STUDIES = 200          # stop after fetching this many trials
+MAX_STUDIES = 2000          # stop after fetching this many trials
 PAGE_SIZE = 100           # trials to request per API call (the API caps this at 1000)
 SLEEP_SECONDS = 0.25      # pause between calls so we don't hammer the API
 
