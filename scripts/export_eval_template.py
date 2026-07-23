@@ -1,12 +1,14 @@
 """
-export_eval_template.py — write the 30 eval trials to a CSV for hand-labeling.
 
-Exports criteria text and EMPTY label columns only. The model's answers are
-deliberately NOT included: labels must be made blind to avoid anchoring on
-the model, or the "ground truth" is contaminated and the accuracy number
-means nothing.
+Write the 30 eval trials to a CSV for hand-labeling.
 
-    py scripts/export_eval_template.py
+Exports the criteria text and EMPTY label columns only. The model's answers are
+deliberately left out: labels have to be made blind, or they anchor on the
+model, the "ground truth" is contaminated, and the accuracy number means
+nothing.
+
+    python scripts/export_eval_template.py
+
 """
 
 import csv
@@ -14,11 +16,11 @@ from pathlib import Path
 
 from snow_connect import get_connection
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-OUT = PROJECT_ROOT / "eval" / "eval_template.csv"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent  # repo root, two levels up from this file
+OUT = PROJECT_ROOT / "eval" / "eval_template.csv"      # CSV this script writes for the labeler to fill in
 
-# The 7 fields to label. Booleans: enter TRUE / FALSE. Numbers: a value or
-# leave blank for null/not-stated.
+# the 7 facts to hand-label per trial (booleans get TRUE/FALSE, numbers get a
+# value or a blank for "not stated")
 LABEL_COLS = [
     "min_bmi",
     "max_bmi",
@@ -31,6 +33,7 @@ LABEL_COLS = [
 
 
 def main():
+    """Pull the eval trials from Snowflake and write them to the labeling CSV."""
     conn = get_connection()
     cur = conn.cursor()
     try:
@@ -50,7 +53,7 @@ def main():
             ["nct_id", "title", "inclusion_text", "exclusion_text"] + LABEL_COLS
         )
         for nct_id, title, incl, excl in rows:
-            # label columns start empty
+            # write the trial text, then one empty cell per label for the human to fill
             w.writerow([nct_id, title, incl or "", excl or ""] + [""] * len(LABEL_COLS))
 
     print(f"Wrote {len(rows)} rows to {OUT}")

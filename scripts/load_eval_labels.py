@@ -1,10 +1,12 @@
 """
-load_eval_labels.py — load the hand-labeled CSV into Snowflake.
 
-Reads eval/eval_labels.csv and writes ct_trials.eval.eval_labels, typed so
-it can be joined against the model extraction for scoring.
+Load the hand-labeled CSV into Snowflake.
 
-    py scripts/load_eval_labels.py
+Reads eval/eval_labels.csv and writes ct_trials.eval.eval_labels, typed so it
+can be joined against the model's extraction for scoring.
+
+    python scripts/load_eval_labels.py
+
 """
 
 import csv
@@ -12,22 +14,24 @@ from pathlib import Path
 
 from snow_connect import get_connection
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-CSV_PATH = PROJECT_ROOT / "eval" / "eval_labels.csv"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent  # repo root, two levels up from this file
+CSV_PATH = PROJECT_ROOT / "eval" / "eval_labels.csv"   # the filled-in labels file to load
 
-NUM_FIELDS = ["min_bmi", "max_bmi", "hba1c_threshold"]
-BOOL_FIELDS = [
+NUM_FIELDS = ["min_bmi", "max_bmi", "hba1c_threshold"]  # label columns parsed as numbers
+BOOL_FIELDS = [                                         # label columns parsed as TRUE/FALSE
     "requires_diabetes", "excludes_diabetes",
     "excludes_prior_bariatric_surgery", "excludes_pregnancy",
 ]
 
 
 def num(v):
+    """Parse a CSV cell as a float, or None if it's blank."""
     v = (v or "").strip()
     return float(v) if v else None
 
 
 def boolean(v):
+    """Parse a CSV cell as TRUE/FALSE, or None if it's anything else (caught at load time)."""
     v = (v or "").strip().upper()
     if v == "TRUE":
         return True
@@ -37,6 +41,7 @@ def boolean(v):
 
 
 def main():
+    """Read the labeled CSV, sanity-check it, and load it into eval.eval_labels."""
     if not CSV_PATH.exists():
         print(f"Not found: {CSV_PATH}")
         print("Rename your labeled file to eval/eval_labels.csv")

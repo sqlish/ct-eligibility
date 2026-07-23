@@ -1,15 +1,14 @@
 """
-gen_keypair.py — generate an RSA keypair for Snowflake key-pair authentication.
 
-Run once:
-    py scripts/gen_keypair.py
+Generate an RSA keypair for Snowflake key-pair authentication.
 
-Writes the private key to rsa_key.p8 (gitignored) and prints the ALTER USER
-statement to paste into Snowsight.
+Run once. Writes the private key to rsa_key.p8 (gitignored) and prints the
+ALTER USER statement to paste into Snowsight.
 
-Note: this generates an UNENCRYPTED private key. That's fine for a 30-day trial
-holding public data. In production you'd encrypt it with a passphrase and keep
-the passphrase in a secrets manager.
+    python scripts/gen_keypair.py
+
+Note: this generates an UNENCRYPTED private key.
+
 """
 
 from pathlib import Path
@@ -17,8 +16,8 @@ from pathlib import Path
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-KEY_PATH = PROJECT_ROOT / "rsa_key.p8"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent  # repo root, two levels up from this file
+KEY_PATH = PROJECT_ROOT / "rsa_key.p8"                 # where the private key gets written
 
 if KEY_PATH.exists():
     print(f"{KEY_PATH} already exists. Delete it first if you want a new key.")
@@ -27,7 +26,7 @@ if KEY_PATH.exists():
 print("Generating 2048-bit RSA keypair...")
 key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
 
-# --- private key -> disk ---
+# save the private key to disk (secret, keep it local)
 private_pem = key.private_bytes(
     encoding=serialization.Encoding.PEM,
     format=serialization.PrivateFormat.PKCS8,
@@ -35,7 +34,7 @@ private_pem = key.private_bytes(
 )
 KEY_PATH.write_bytes(private_pem)
 
-# --- public key -> stdout, stripped for ALTER USER ---
+# the public key goes to Snowflake (safe to share) via the ALTER USER statement
 public_pem = key.public_key().public_bytes(
     encoding=serialization.Encoding.PEM,
     format=serialization.PublicFormat.SubjectPublicKeyInfo,

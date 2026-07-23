@@ -1,12 +1,11 @@
 """
-snow_connect.py — one place that knows how to reach Snowflake.
 
-Uses key-pair authentication. Password auth is blocked by MFA/TOTP on this
-account, and key-pair is what Snowflake steers programmatic access toward
-anyway (no expiry, no network policy requirement, no interactive second factor).
+How to reach Snowflake.
 
-Self-test:
-    py scripts/snow_connect.py
+Uses key-pair authentication.
+
+    python scripts/snow_connect.py   # run directly to self-test the connection
+
 """
 
 import os
@@ -17,9 +16,10 @@ import snowflake.connector
 from cryptography.hazmat.primitives import serialization
 from dotenv import load_dotenv
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(PROJECT_ROOT / ".env")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent  # repo root, two levels up from this file
+load_dotenv(PROJECT_ROOT / ".env")                     # pull Snowflake credentials out of the .env file
 
+# env vars that must be present, or we can't build a connection
 REQUIRED = [
     "SNOWFLAKE_ACCOUNT",
     "SNOWFLAKE_USER",
@@ -29,10 +29,11 @@ REQUIRED = [
     "SNOWFLAKE_SCHEMA",
 ]
 
-DEFAULT_KEY_PATH = PROJECT_ROOT / "rsa_key.p8"
+DEFAULT_KEY_PATH = PROJECT_ROOT / "rsa_key.p8"  # private key location, unless .env overrides it
 
 
 def _load_private_key():
+    """Read the RSA private key from disk and return it in the format the connector needs."""
     key_path = Path(os.getenv("SNOWFLAKE_PRIVATE_KEY_PATH", DEFAULT_KEY_PATH))
     if not key_path.exists():
         print(f"Private key not found at {key_path}")
@@ -54,7 +55,7 @@ def _load_private_key():
 
 
 def get_connection():
-    """Return an open Snowflake connection using key-pair auth."""
+    """Open and return a Snowflake connection using key-pair auth."""
     missing = [k for k in REQUIRED if not os.getenv(k)]
     if missing:
         print(f"Missing from .env: {', '.join(missing)}")
