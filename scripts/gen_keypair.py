@@ -11,13 +11,19 @@ Note: this generates an UNENCRYPTED private key.
 
 """
 
+import os
 from pathlib import Path
 
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
+from dotenv import load_dotenv
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent  # repo root, two levels up from this file
 KEY_PATH = PROJECT_ROOT / "rsa_key.p8"                 # where the private key gets written
+
+load_dotenv(PROJECT_ROOT / ".env")                     # pull SNOWFLAKE_USER from the .env file
+# user the public key gets attached to; falls back to a placeholder if .env isn't set
+SNOWFLAKE_USER = os.getenv("SNOWFLAKE_USER", "<YOUR_SNOWFLAKE_USER>")
 
 if KEY_PATH.exists():
     print(f"{KEY_PATH} already exists. Delete it first if you want a new key.")
@@ -51,5 +57,5 @@ print("  ^ NEVER commit this. Confirm rsa_key.p8 is in .gitignore.\n")
 print("=" * 70)
 print("Paste this into a Snowsight worksheet:\n")
 print(f"USE ROLE ACCOUNTADMIN;")
-print(f"ALTER USER SQLISH SET RSA_PUBLIC_KEY='{public_body}';")
+print(f"ALTER USER {SNOWFLAKE_USER} SET RSA_PUBLIC_KEY='{public_body}';")
 print("=" * 70)
