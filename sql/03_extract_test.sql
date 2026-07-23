@@ -1,32 +1,27 @@
--- ============================================================
--- 03_extract_test.sql
--- Test the eligibility-fact extraction on 20 rows BEFORE running 2,000.
+-- 03_extract_test.sql — test the eligibility-fact extraction on 20 rows before running all 2,000.
 --
--- Why this is a separate file from the full run:
---   Every row costs tokens. The fetch script was tested at MAX_STUDIES=20
---   for the same reason a database load is tested on a sample — except
---   here the cost is real money, not just time. Read the 20 outputs,
---   confirm the schema behaves, THEN scale up.
+-- Kept separate from the full run because every row costs tokens: same reasoning as testing a
+-- database load on a sample, except here the cost is real money. Read the 20 outputs, confirm the
+-- schema behaves, then scale up.
 --
 -- Tooling choices:
---   * TRY_COMPLETE with response_format: schema-constrained generation.
---     The model cannot emit a field outside the schema or a wrong type,
---     so there is no markdown-fence stripping or PARSE_JSON failure path
---     (which the older COMPLETE + REGEXP_REPLACE approach needed).
---   * TRY_COMPLETE: safe variant that returns NULL on a failed row
---     instead of aborting the whole 2,000-row statement.
+--   * response_format (schema-constrained): the model can't emit a field outside the schema or a
+--     wrong type, so there's no markdown-fence stripping or PARSE_JSON failure path (which the
+--     older COMPLETE + REGEXP_REPLACE approach needed).
+--   * TRY_COMPLETE: the safe variant — returns NULL on a failed row instead of aborting the whole
+--     2,000-row statement.
 --   * temperature 0: extraction must be deterministic, not creative.
 --
--- Scope: 6 facts that live ONLY in free text. Age/sex/healthy-volunteer
--- status are already structured in core.trials from the registry, so we
--- do NOT re-extract them — that would be paying tokens for data we have.
--- ============================================================
+-- Scope: the 6 facts (across 7 fields — BMI has a min and a max) that live ONLY in free text.
+-- Age/sex/healthy-volunteer status are already structured in core.trials from the registry, so
+-- they're not re-extracted — that would be paying tokens for data we already have.
 
 USE ROLE      ct_engineer;
 USE WAREHOUSE ct_wh;
 USE DATABASE  ct_trials;
 USE SCHEMA    core;
 
+-- 20 cleanly-split trials at random — the sample we inspect before the full run
 WITH test_rows AS (
     SELECT
         nct_id,
@@ -41,6 +36,7 @@ SELECT
     nct_id,
     inclusion_text,
     exclusion_text,
+    -- ask the model for the 7 facts as strict JSON; :structured_output[0] pulls the parsed object out
     SNOWFLAKE.CORTEX.TRY_COMPLETE(
         'claude-sonnet-4-6',
         [ { 'role': 'user', 'content': CONCAT(
