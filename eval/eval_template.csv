@@ -13,7 +13,7 @@ NCT00923819,4XL Study - Obesity Surgery in Adolescence,"Inclusion Criteria:
 * Obesity syndrome (e.g., Prader Willi syndrome)
 * Obesity related to brain damage
 * Serious general disease
-* Monogenic obesity",35,,,FALSE,FALSE,FALSE,FALSE
+* Monogenic obesity",,,,,,,
 NCT01809288,Identifying Risk for Diabetes and Heart Disease in Women,"INCLUSION CRITERIA FOR PRIMARY PROTOCOL:
 * African, African-American and White Women
 * Healthy Volunteers
@@ -32,14 +32,14 @@ Same as primary outpatient protocol except:
 ","EXCLUSION CRITERIA:
 
 * Pregnancy
-* Medications or Medical Conditions which affect parameters under investigation",20,45,,FALSE,FALSE,FALSE,TRUE
+* Medications or Medical Conditions which affect parameters under investigation",,,,,,,
 NCT03344718,Metabolic Syndrome and Vitamin D Level in Old People,"Inclusion Criteria:
 
 * more than 65-year-old
 
 ","Exclusion Criteria:
 
-* excluding empty houses, death, non-ambulatory subjects (subjects with significant disabilities, such as handicapped cerebral vascular accident, cancerous cachexia, unstable chronic diseases or psychiatric disorders, severe arthritis or inflammatory disease), uncomfortable anorexia by any medications, and non-reachable subjects",,,,FALSE,FALSE,FALSE,FALSE
+* excluding empty houses, death, non-ambulatory subjects (subjects with significant disabilities, such as handicapped cerebral vascular accident, cancerous cachexia, unstable chronic diseases or psychiatric disorders, severe arthritis or inflammatory disease), uncomfortable anorexia by any medications, and non-reachable subjects",,,,,,,
 NCT04385615,Fasting Mimicking Diet and Beige/Brown Adipose Tissue in Humans,"Inclusion Criteria:
 
 * Body mass index (BMI) ≥ 25 and \< 30kg/m2.
@@ -55,7 +55,7 @@ NCT04385615,Fasting Mimicking Diet and Beige/Brown Adipose Tissue in Humans,"Inc
 * Individuals with neoplasms, transmissible diseases, rheumatic disease, hepatic or renal insufficiency, non-treated thyroid dysfunction, diabetes mellitus, cardiovascular disease, history of fainting, active infection;
 * Individuals who are allergic to nuts, soybean, oats, sesame or celery;
 * Individuals who have had a change of more than 5% of their body weight in the last six months;
-* Individuals who are carrying some kind of diet or modification to their habitual eating habits.",25,30,,FALSE,FALSE,TRUE,TRUE
+* Individuals who are carrying some kind of diet or modification to their habitual eating habits.",,,,,,,
 NCT04793334,Underlying Mechanisms of Obesity-induced Obstructive Sleep Apnea,"Inclusion Criteria:
 
 * \- Men and women
@@ -69,7 +69,7 @@ NCT04793334,Underlying Mechanisms of Obesity-induced Obstructive Sleep Apnea,"In
 * Pregnancy
 * Currently smoking
 * Any respiratory disorder other than OSA or well controlled asthma
-* contraindication to MRI",35,,,FALSE,FALSE,FALSE,TRUE
+* contraindication to MRI",,,,,,,
 NCT05225233,tDCS With Cognitive Training to Reduce Impulsivity and Weight in Veterans With Obesity,"Inclusion Criteria:
 
 * Veteran enrolled in a MOVE! Weight Management Program (group or individual) at the Minneapolis VA Health Care System
@@ -90,7 +90,7 @@ NCT05225233,tDCS With Cognitive Training to Reduce Impulsivity and Weight in Vet
 * Moderately severe to severe depression (as identified on PHQ-9 scale during baseline screening)
 * Other psychological or medical disorders requiring inpatient treatment (as identified during chart review)
 * Presence of a known metabolic or hormonal disorder (such as Cushing's, untreated thyroid dysfunction, or uncontrolled diabetes mellitus defined as a hemoglobin A1c \> 8.0), or significant edema/volume overload - all of which would affect weight
-* Uncontrolled hypothyroidism that would affect weight",27,,,FALSE,FALSE,FALSE,TRUE
+* Uncontrolled hypothyroidism that would affect weight",,,,,,,
 NCT05459909,The Effect of Synbiotic and Diet Modification Among Overweight or Obese Hong Kong Chinese,"Inclusion Criteria:
 
 * Waist circumference ≥90cm in men and ≥80cm in women
@@ -103,7 +103,7 @@ NCT05459909,The Effect of Synbiotic and Diet Modification Among Overweight or Ob
 * Consuming laxatives, any gastrointestinal medication, probiotics, prebiotics, synbiotics or antibiotics
 * Smokers
 * Alcohol abuser
-* Currently pregnant or lactating",23,,,FALSE,FALSE,FALSE,TRUE
+* Currently pregnant or lactating",,,,,,,
 NCT05774756,A Trial of Setmelanotide in Acquired Hypothalamic Obesity,"Inclusion Criteria:
 
 1. Documented evidence of acquired hypothalamic obesity (HO)
@@ -127,7 +127,7 @@ Key","Exclusion Criteria:
 12. Patients with obesity attributable to other genetic or syndromic conditions (eg, PPL \[POMC, PCSK1, LEPR, collectively\], BBS) prior to the hypothalamic injury.
 13. If receiving hormone replacement therapy, dose has remained stable for at least 2 months before Screening
 
-Other protocol defined Inclusion/Exclusion criteria may apply.",30,,,FALSE,FALSE,TRUE,TRUE
+Other protocol defined Inclusion/Exclusion criteria may apply.",,,,,,,
 NCT05985486,Brain Outcomes With Lifestyle Change in Down Syndrome,"Inclusion Criteria:
 
 * Diagnosis of Down syndrome
@@ -146,7 +146,7 @@ NCT05985486,Brain Outcomes With Lifestyle Change in Down Syndrome,"Inclusion Cri
 * Unwilling to be randomized
 * Contraindications for MRI, including metal implants or devices incompatible with MRI such as pacemakers, claustrophobia, and inability to lay in a supine position
 * Use of GLP-1 medications
-* Use of anti-amyloid medications",25,50,,FALSE,TRUE,FALSE,FALSE
+* Use of anti-amyloid medications",,,,,,,
 NCT06019832,Analysis of Varus Collapse in Obese Patients With Stem and Non-Stem Tibial Components Following Primary Total Knee Arthroplasty,"Inclusion criteria:
 
 * Female adult patients with severe osteoarthritis scheduled to have primary total knee arthroplasty
@@ -160,7 +160,7 @@ NCT06019832,Analysis of Varus Collapse in Obese Patients With Stem and Non-Stem 
 * Patients who have some active local or widespread infection (including secondary or inflammatory osteoarthritis)
 * medical conditions that put them at risk of complications or death during and after the study would not be eligible for surgery
 * Patients with previous knee surgery on arthroplasty site will be excluded
-* Pregnant patients and women who are capable of getting pregnant",35,,,FALSE,FALSE,FALSE,TRUE
+* Pregnant patients and women who are capable of getting pregnant",,,,,,,
 NCT06119516,Transpulmonary Pressure - Guided Mechanical Ventilation in Morbidly Obese ARDS Patients: a Feasibility Study.,"Inclusion Criteria:
 
 * Adult patient (aged 18 years or older)
@@ -180,7 +180,7 @@ NCT06119516,Transpulmonary Pressure - Guided Mechanical Ventilation in Morbidly 
 * Elevated intracranial pressure
 * Active air-leak: pneumothorax, pneumomediastinum
 * Pregnancy or breast feeding
-* Patient on state medical aid",40,,,FALSE,FALSE,FALSE,TRUE
+* Patient on state medical aid",,,,,,,
 NCT06199635,Early Feasibility for Safety & Device Functionality of SFM Anastomosis Device Used in 3 Procedures (SNAP-S) or (SNAP-PS) or (J-J),"Inclusion Criteria:
 
 * All Subjects:
@@ -244,7 +244,7 @@ NCT06199635,Early Feasibility for Safety & Device Functionality of SFM Anastomos
 
   24\. Any form of substance abuse or psychiatric disorder that in the opinion of the investigator could interfere with the conduct of the study
 
-  25\. (Women only) Pregnancy at screening (+ urine hCG) or unwilling to use contraception throughout study period",35,55,,FALSE,TRUE,FALSE,TRUE
+  25\. (Women only) Pregnancy at screening (+ urine hCG) or unwilling to use contraception throughout study period",,,,,,,
 NCT06200896,"Early Feasibility Study: Assessment of Self-Forming Magnetic Anastomosis Device and Delivery System (SFM) in Obese Patients, When Used to Create a Duodenal-Ileal Anastomosis Post SG (SNAP-PS), or Used to Create a Jejuno-Jejunal (J-J) Anastomosis","Inclusion Criteria:
 
 1. Age 18-65 years at screening
@@ -282,7 +282,7 @@ NCT06200896,"Early Feasibility Study: Assessment of Self-Forming Magnetic Anasto
 22. Subject has an active or suspected infection at the surgical site or a CDC Class 3/contaminated or Class 4/dirty-infected surgical wound.
 23. Subject is not appropriate for inclusion in the clinical trial, per the medical opinion of the Principal Investigator""
 24. Other prior or concurrent conditions that in the opinion of the Investigator would be unlikely to receive clinical benefit from the study procedure or participation in the study may compromise patient safety or study objectives such as the presence/diagnosis of a severe and evolutive life threatening pathology unrelated to obesity including but not limited to: ongoing infection, chronic pancreatitis, severe hepatic dysfunction, or renal dysfunction (GFR \<60mL/min/1.73m2)
-25. Any form of substance abuse or psychiatric disorder that in the opinion of the investigator could interfere with the conduct of the study",35.1,55,,FALSE,TRUE,FALSE,TRUE
+25. Any form of substance abuse or psychiatric disorder that in the opinion of the investigator could interfere with the conduct of the study",,,,,,,
 NCT06349460,Trial to Optimize Just-in-Time Adaptive Intervention for Binge Eating & Weight-related Behaviors,"Inclusion Criteria:
 
 * Adults age 18 years or older
@@ -299,7 +299,7 @@ NCT06349460,Trial to Optimize Just-in-Time Adaptive Intervention for Binge Eatin
 ","Exclusion Criteria:
 
 * Diagnosis for which the study/intervention is not clinically indicated
-* Not currently receiving clinical services for weight management or binge eating",30,,,FALSE,FALSE,FALSE,TRUE
+* Not currently receiving clinical services for weight management or binge eating",,,,,,,
 NCT06564441,"A Study to Test Whether BI 456906 (Survodutide) Influences the Amount of Bupropion, Caffeine and Midazolam in the Blood in People With Overweight or Obesity","Inclusion Criteria :
 
 1. Otherwise healthy male or female subjects according to the assessment of the investigator, as based on a complete medical history including a physical examination, vital signs (blood pressure (BP), pulse rate (PR)), 12-lead electrocardiogram (ECG), and clinical laboratory tests
@@ -320,7 +320,7 @@ NCT06564441,"A Study to Test Whether BI 456906 (Survodutide) Influences the Amou
    * Lipase or amylase above ULN + 20%,
    * Estimated glomerular filtration rate (eGFR) \< 80 mL/min/1.73 m².
 4. Any evidence of a concomitant disease assessed as clinically relevant by the investigator
-5. Further exclusion criteria apply",27,39.9,,FALSE,FALSE,FALSE,FALSE
+5. Further exclusion criteria apply",,,,,,,
 NCT06571487,Growth Hormone Resistance of Beta-cells A,"Inclusion Criteria:
 
 * Singleton, full term pregnancy within the past 5 years
@@ -344,7 +344,7 @@ Group specific inclusion criteria:
 * Evidence of significant anemia or significant end organ dysfunction (e.g., liver, kidney, heart disease)
 * Alcohol use disorder, use of controlled substances, or smoking \>2 cigarettes per day
 * Greater than 3% weight loss within three months of screening or engaged in regular (≥3 days per week), continuous moderate- or high-intensity exercise of ≥30 min duration
-* Mentally disabled persons, prisoners, and persons with inability to grant voluntary informed consent",18.5,45,,TRUE,TRUE,TRUE,TRUE
+* Mentally disabled persons, prisoners, and persons with inability to grant voluntary informed consent",,,,,,,
 NCT06572345,Low EnerGy DiEt iN Adolescents With Obesity and Type 2 Diabetes: The LEGEND Study,"Inclusion criteria
 
 LED intervention
@@ -429,7 +429,7 @@ Non-LED Qualitative Interview only participants
 
 HCPs
 
-• None.",,,42,FALSE,FALSE,FALSE,TRUE
+• None.",,,,,,,
 NCT06723028,Mobile Regulation of Craving Training (mROC-T) to Improve Dietary Intake in Rural Adolescent Girls,"Inclusion Criteria:
 
 * Biologically female
@@ -499,7 +499,7 @@ NCT06723028,Mobile Regulation of Craving Training (mROC-T) to Improve Dietary In
   * History of polycystic ovary syndrome
   * History of thyroid disease (either hyper or hypo)
   * History of adrenal disease (including Cushing's syndrome, Addison's disease)
-  * Use of medications related to metabolism/weight such as insulin, corticosteroids, growth hormone, sulfonylurea, thiazolidinediones, beta blockers, calcium channel blockers, bupropion, reboxetine, molindone, clozapine, olanzapine, topiramate, zonisamide, valproate, carbamazepine, lithium, hypolipidemic drugs, highly-active antiretroviral therapies",,,,FALSE,TRUE,FALSE,FALSE
+  * Use of medications related to metabolism/weight such as insulin, corticosteroids, growth hormone, sulfonylurea, thiazolidinediones, beta blockers, calcium channel blockers, bupropion, reboxetine, molindone, clozapine, olanzapine, topiramate, zonisamide, valproate, carbamazepine, lithium, hypolipidemic drugs, highly-active antiretroviral therapies",,,,,,,
 NCT06896682,Cortisol and Obesity - A Vicious Cycle? Hypoglycemia After Bariatric Surgery - Association With Cortisol Metabolism?,"Inclusion Criteria:
 
 Participants must have undergone one of the following bariatric procedures at least 12 months prior:
@@ -516,7 +516,7 @@ Participants must have undergone one of the following bariatric procedures at le
 * Use of medications containing estrogen, such as hormone therapy for menopause
 * Known adrenal disease affecting cortisol metabolism, including autonomous cortisol production and Cushing's syndrome
 * Diabetes that does not require medical treatment
-* Previously diagnosed reactive hypoglycemia after bariatric surgery requiring medical treatment",,,,FALSE,TRUE,TRUE,TRUE
+* Previously diagnosed reactive hypoglycemia after bariatric surgery requiring medical treatment",,,,,,,
 NCT07349381,A Food-Effect Study of CX11 in Healthy Participants,"Inclusion Criteria:
 
 1. Fully understand the objective, nature, methods, and possible adverse reactions of the study; be able to communicate well with the investigator; voluntarily take part in the study and be willing to comply with the requirements of this study; and sign the informed consent form before all study procedures are started
@@ -530,7 +530,7 @@ NCT07349381,A Food-Effect Study of CX11 in Healthy Participants,"Inclusion Crite
 4. Participants suffering from any clinically significant chronic diseases, including but not limited to disorders of the respiratory system, cardiovascular system, urinary system, blood system, endocrine system, and immune system, as well as the digestive system (e.g., history of or current fatty liver disease, including metabolic dysfunction-associated steatohepatitis
 5. History of thyroid dysfunction requiring medication or with a thyroid stimulating hormone (TSH) level exceeding the normal reference range at screening or on Day 21
 6. Participants who have been vaccinated within 30 days before the screening or plan to be vaccinated during the study
-7. Participated in any other clinical study and received an investigational intervention within 90 days or 5 elimination half-lives (whichever is longer) of the investigational intervention, prior to screening",20,28,,FALSE,FALSE,FALSE,FALSE
+7. Participated in any other clinical study and received an investigational intervention within 90 days or 5 elimination half-lives (whichever is longer) of the investigational intervention, prior to screening",,,,,,,
 NCT07412782,REMS25: Study on the Use of REMS Technology in Diseases Commonly Associated With Reduced Bone Mineral Density (BMD),"Inclusion Criteria:
 
 * Written informed consent from adult patients or parents/legal guardians
@@ -540,7 +540,7 @@ NCT07412782,REMS25: Study on the Use of REMS Technology in Diseases Commonly Ass
 
 ","Exclusion Criteria:
 
-\- Age below 5 years or over 18 years",,,,FALSE,FALSE,FALSE,FALSE
+\- Age below 5 years or over 18 years",,,,,,,
 NCT07425093,"Investigation of the Relationship Between Gray and White Matter Volumes, Walking Exercise, and Body Fat Percentage in Adults With a Body Mass Index Above 25","Inclusion Criteria:
 
 1. Adults aged 19-65 years
@@ -581,7 +581,7 @@ NCT07425093,"Investigation of the Relationship Between Gray and White Matter Vol
 14. Diagnosis of Multiple Sclerosis or Alzheimer's disease
 15. Conditions affecting brain ventricular volume (e.g., hydrocephalus)
 16. Pregnancy
-17. Currently breastfeeding",25,,,FALSE,TRUE,FALSE,FALSE
+17. Currently breastfeeding",,,,,,,
 NCT07465094,"Workplace Health Promotion ""So Healthy, Lose 99"" Weight Loss Activity","Inclusion Criteria:
 
 1. Employees of China Medical University Hospital
@@ -593,7 +593,7 @@ NCT07465094,"Workplace Health Promotion ""So Healthy, Lose 99"" Weight Loss Acti
 1. Pregnant women or those planning to become pregnant
 2. Individuals with a history of liver or kidney dysfunction, cardiovascular disease, stroke, or cancer
 3. Individuals before or after major surgery
-4. Individuals with severe mental or neurological disorders",27,,,FALSE,FALSE,FALSE,TRUE
+4. Individuals with severe mental or neurological disorders",,,,,,,
 NCT07547722,Effect of a High-Protein Diet With Meal Replacements on Weight Loss,"Inclusion Criteria:
 
 * Adults aged 25 to 60 years
@@ -614,7 +614,7 @@ NCT07547722,Effect of a High-Protein Diet With Meal Replacements on Weight Loss,
 * Active oncological disease or cancer treatment within the past 12 months
 * Acute or chronic inflammatory disease in the acute stage
 * History of gastrointestinal or bariatric surgery affecting absorption or body weight within the past 12 months
-* Severe pulmonary disease in the stage of decompensation Allergy or intolerance to components of the study products, including milk proteins or lactose-containing products Current use of medications or dietary supplements that significantly affect body weight, if discontinuation before study start is not possible Participation in another interventional clinical study within the past 3 months Inability to provide informed consent or comply with the study protocol Significant body weight change, defined as more than 5% gain or loss, within the past 3 months before screening Severe psychiatric disorders or eating disorders that may interfere with participation Active alcohol or substance dependence Chronic use of systemic glucocorticoids or other medications affecting body weight, if discontinuation is not appropriate Planned pregnancy during the study period Uncontrolled thyroid disease Acute infection or febrile illness at screening Clinically significant abnormal laboratory findings at screening that, in the investigator's opinion, make participation unsafe",,,,FALSE,TRUE,TRUE,TRUE
+* Severe pulmonary disease in the stage of decompensation Allergy or intolerance to components of the study products, including milk proteins or lactose-containing products Current use of medications or dietary supplements that significantly affect body weight, if discontinuation before study start is not possible Participation in another interventional clinical study within the past 3 months Inability to provide informed consent or comply with the study protocol Significant body weight change, defined as more than 5% gain or loss, within the past 3 months before screening Severe psychiatric disorders or eating disorders that may interfere with participation Active alcohol or substance dependence Chronic use of systemic glucocorticoids or other medications affecting body weight, if discontinuation is not appropriate Planned pregnancy during the study period Uncontrolled thyroid disease Acute infection or febrile illness at screening Clinically significant abnormal laboratory findings at screening that, in the investigator's opinion, make participation unsafe",,,,,,,
 NCT07556679,PLAY2CONTROL Study,"Inclusion Criteria:
 
 * Patients followed at the University of Miami Pediatric Endocrinology Clinic
@@ -628,7 +628,7 @@ NCT07556679,PLAY2CONTROL Study,"Inclusion Criteria:
 * Patients without Televisions at home
 * Pregnant females
 * Patients in juvenile detention or prison
-* Adults unable to consent",,,,FALSE,FALSE,FALSE,TRUE
+* Adults unable to consent",,,,,,,
 NCT07561931,Effects of High-frequency Left Dorsolateral Prefrontal rTMS on Heart-brain Coupling in Women With Recurrent Pregnancy Loss and Elevated BMI,"Inclusion Criteria:
 
 * 1.Female participants aged 18-45 years and right-handed.
@@ -647,7 +647,7 @@ NCT07561931,Effects of High-frequency Left Dorsolateral Prefrontal rTMS on Heart
 * 6.Severe psychiatric disorders that may affect study safety or adherence, including schizophrenia spectrum disorders, bipolar disorder during a manic or hypomanic episode, delirium, and active substance use disorder.
 * 7.Severe anxiety or severe depression, defined as a Hamilton Anxiety Rating Scale total score of ≥25 or a 17-item Hamilton Depression Rating Scale total score of ≥24.
 * 8.Recent medication-related confounding risk, including current withdrawal from alcohol, sedative-hypnotics, or other relevant substances, or initiation, discontinuation, or dose adjustment within the preceding 2 weeks of medications that may substantially affect seizure threshold, autonomic function, ECG-related indices, or interpretation of the primary endpoint.
-* 9.Any other condition judged by the research team to make participation inappropriate.",24,,,FALSE,FALSE,FALSE,TRUE
+* 9.Any other condition judged by the research team to make participation inappropriate.",,,,,,,
 NCT07581431,"A Phase 1, Evaluate the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of ISM8969","Inclusion Criteria:
 
 Participants must meet all the following criteria to be included in the study:
@@ -678,14 +678,14 @@ Participants for whom any of the following applies will be excluded from the stu
 6. History of significant cardiovascular or cerebrovascular disease within 6 months before screening, including but not limited to defined in the protocol.
 7. History of an active or untreated malignancy or are in remission from a clinically significant malignancy (other than basal- or squamous-cell skin cancer, or in situ carcinomas of the cervix) for less than 5 years; or there is a potential malignancy during screening.
 8. Participation in a clinical research study involving the administration of an investigational or marketed drug or device within 30 days (or 5 half-lives, whichever is longer) prior to the first dosing, administration of a biological product in the context of a clinical research study within 90 days (or 5 half-lives, whichever is longer) prior to the first dosing, or concomitant participation in an investigational study involving no drug or device administration.
-9. Presence of contraindication to lumbar puncture or lumbar catheter as judged by Investigator.",18.5,30,,FALSE,FALSE,FALSE,TRUE
+9. Presence of contraindication to lumbar puncture or lumbar catheter as judged by Investigator.",,,,,,,
 NCT07602803,The Effect of GLP1 Agonists on Weight Loss in BBS Cohort in the UK,"Inclusion Criteria:
 
 * All the adult patients with a genetic diagnosis of BBS under the national BBS centres (London and Birmingham in the UK).
 
 ","Exclusion Criteria:
 
-* Adult patients with a genetic diagnosis of BBS under the national BBS centres (London and Birmingham in the UK) who lost follow ups or significant missing data, or BMI\<30 in patients without GLP1 agonists.",,,,FALSE,FALSE,FALSE,FALSE
+* Adult patients with a genetic diagnosis of BBS under the national BBS centres (London and Birmingham in the UK) who lost follow ups or significant missing data, or BMI\<30 in patients without GLP1 agonists.",,,,,,,
 NCT07634302,Effects of Resveratrol Supplementation Combined With a Low-Calorie Diet in Postmenopausal Women With Obesity and Knee Osteoarthritis,"Inclusion Criteria:
 
 * Postmenopausal women aged 45-75 years.
@@ -704,7 +704,7 @@ NCT07634302,Effects of Resveratrol Supplementation Combined With a Low-Calorie D
 * Major cardiovascular event within the past 6 months.
 * Alcohol abuse or dependence.
 * Severe psychiatric disorder or cognitive impairment limiting protocol adherence.
-* Use of resveratrol-containing supplements or investigational products within the past 6 months.",30,,,FALSE,FALSE,FALSE,FALSE
+* Use of resveratrol-containing supplements or investigational products within the past 6 months.",,,,,,,
 NCT07650409,A Dietary Intervention (Soy Soft Pretzels) for Reducing Chronic Inflammation in Obese Individuals,"Inclusion Criteria:
 
 * Provision of signed and dated informed consent form
@@ -729,4 +729,4 @@ NCT07650409,A Dietary Intervention (Soy Soft Pretzels) for Reducing Chronic Infl
 * Strict veganism (no consumption of animal, fish, or egg products)
 * Heavy alcohol consumption (defined as consumption of \> 14 drinks/week on average)
 * Current or prior history of any condition that causes altered immunity such as chronic inflammatory disease, autoimmune disorders, cancer, anemia, and blood dyscrasias
-* Regular usage of inflammation lowering medications which include but not limited to nonsteroidal anti-inflammatory drugs such as aspirin, ibuprofen, and naproxen, or anti-pyretic medications such as acetaminophen",18.5,,,FALSE,TRUE,FALSE,FALSE
+* Regular usage of inflammation lowering medications which include but not limited to nonsteroidal anti-inflammatory drugs such as aspirin, ibuprofen, and naproxen, or anti-pyretic medications such as acetaminophen",,,,,,,
