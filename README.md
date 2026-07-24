@@ -10,23 +10,40 @@ This project pulls obesity trials from the ClinicalTrials.gov v2 API, lands them
 
 ## Accuracy
 
-The extraction is checked against 30 hand-labeled trials (210 field labels, 7 per trial), at 89% field-level accuracy. By field:
+The extraction is measured against 30 hand-labeled trials (210 field labels, 7 per trial). Labels were made blind — before running the model — so they can't anchor to its output.
 
 | Field | Accuracy |
-|---|---|
+| --- | --- |
 | max_bmi | 96.7% |
 | min_bmi | 93.3% |
 | excludes_pregnancy | 93.3% |
 | requires_diabetes | 90.0% |
-| excludes_prior_bariatric_surgery | 90.0% |
+| excludes_prior_bariatric_surgery | 86.7% |
 | hba1c_threshold | 83.3% |
 | excludes_diabetes | 76.7% |
+| **overall** | **88.6%** |
 
-The failure modes are characterized rather than hidden (details in [`eval/`](eval/)):
+At 30 trials, a single row is ~0.5 points of aggregate accuracy, so this figure carries roughly ±2–3 points of noise. It should be read as "high 80s," not as a precise value.
 
-- **Subtype phrasing.** `excludes_diabetes`, the weakest field at 76.7%, misses when the exclusion names a subtype like "insulin-dependent diabetes" instead of the bare term. This is the biggest single error source.
-- **Unit ambiguity.** HbA1c thresholds show up as both `%` and `mmol/mol`. The schema doesn't disambiguate, so 6.0% and 42 mmol/mol get scored as a mismatch even though they're the same threshold.
-- **BMI stratification.** Trials that bucket patients into BMI bands (normal / overweight / obese) blur the eligibility floor against a merely descriptive category.
+### Failure modes
+
+- **Subtype phrasing.** `excludes_diabetes`, the weakest field, misses when the exclusion names a subtype ("insulin-dependent diabetes") rather than the bare term.
+- **Unit ambiguity.** HbA1c thresholds appear as both `%` and `mmol/mol`.
+- **BMI stratification.** Trials that bucket patients into BMI bands blur the eligibility floor against a merely descriptive category.
+
+### Measurement loop
+
+The first measurement scored 89.0%. Failure-mode analysis produced two targeted schema refinements, which were then re-measured:
+
+- **The HbA1c unit instruction worked.** The model now converts mmol/mol to percent — and in doing so exposed a units error in the ground-truth label itself, which had been recorded in mmol/mol against a field defined as a percentage.
+- **The diabetes-subtype instruction changed nothing.** Zero rows moved. Longer field descriptions are not a reliable lever; shifting that field would likely need few-shot examples or a dedicated call.
+- **One unmodified field moved by a row.** `excludes_prior_bariatric_surgery` shifted 90.0% → 86.7% with no prompt change, confirming that `temperature: 0` constrains sampling but does not guarantee determinism in a served model.
+
+Aggregate accuracy was unchanged at 88.6% — within noise. The refined prompt was kept regardless, because consistent percent units across all 2,000 rows is better production behavior even where the eval doesn't reward it.
+
+### Independent validation
+
+The distribution of extracted `min_bmi` values across all 2,000 trials clusters on recognized clinical thresholds — 25 (overweight, 297 trials), 27 (GLP-1 label threshold with comorbidity, 286), 30 (obesity, 344), and 35 (severe obesity, 104). Reproducing the field's actual decision points, rather than a smooth or arbitrary spread, is evidence the extraction tracks clinical meaning and not surface pattern-matching. This check is independent of the hand labels.
 
 ## Where the AI is used, and where it isn't
 
@@ -84,20 +101,24 @@ The scripts and SQL files run in numbered order. SQL files run in a Snowsight wo
 5. **Ingest.** `python scripts/fetch_trials.py` (API → local NDJSON), then `python scripts/load_trials.py` (NDJSON → `raw.studies_raw`).
 6. **Model.** Run `sql/01_explore.sql` (optional profiling), `sql/02_core_model.sql`, and `sql/02b_criteria_split_v2.sql`.
 7. **Evaluate.** `sql/04_eval_sample.sql` → `python scripts/export_eval_template.py` → hand-label `eval/eval_labels.csv` → `python scripts/load_eval_labels.py` → `sql/05_eval_extract_and_score.sql`.
+8. **Extract at scale.** `sql/06_extract_production.sql` applies the extraction to all trials into `core.trial_facts`. It's incremental (an anti-join skips rows already extracted, so re-runs don't pay twice) and routes the ~2% of irregular trials through a full-text fallback path.
 
 ## Example query
 
-Once the facts are columns, the question from the top of this README is a `WHERE` clause. This scores the extraction on the 30-trial eval set (`eval.eval_pred_flat`); the same extraction call scales to the full population by running it against `core.trial_criteria`.
+Once the facts are columns, the question from the top of this README is a `WHERE` clause — over all 2,000 trials.
 
 ```sql
 -- obesity trials that would accept a patient with BMI 32 and no diabetes
-SELECT t.nct_id, t.title
-FROM eval.eval_pred_flat f
+SELECT t.nct_id, t.title, f.min_bmi, f.max_bmi
+FROM core.trial_facts f
 JOIN core.trials t USING (nct_id)
-WHERE f.min_bmi <= 32                          -- patient clears the BMI floor
-  AND (f.max_bmi IS NULL OR f.max_bmi >= 32)   -- and is under any ceiling
-  AND NOT COALESCE(f.requires_diabetes, FALSE);-- trial doesn't require diabetes
+WHERE f.min_bmi <= 32                            -- patient clears the BMI floor
+  AND (f.max_bmi IS NULL OR f.max_bmi >= 32)     -- and is under any ceiling
+  AND NOT COALESCE(f.requires_diabetes, FALSE)   -- trial doesn't require diabetes
+  AND NOT COALESCE(f.excludes_diabetes, FALSE);  -- and doesn't exclude for it
 ```
+
+Corpus-level questions work the same way. Across the 2,000 trials: 1,105 exclude pregnancy, 664 exclude diabetes, 520 exclude prior bariatric surgery, 439 impose an HbA1c gate, and 112 require a diabetes diagnosis.
 
 ## Repo layout
 
@@ -128,6 +149,7 @@ eval/
 - **Key-pair authentication.** Password auth is blocked by MFA/TOTP for programmatic access, and PATs require an attached network policy. RSA key-pair auth is the standard programmatic path and avoids both.
 - **Structured outputs over parsing.** Cortex `response_format` with a JSON schema constrains generation to valid, typed output, which removes the markdown-fence stripping and parse-failure handling a plain-completion approach needs.
 - **Idempotent loads.** `MERGE` on `nct_id` with `QUALIFY` dedup makes the pipeline safely re-runnable; overlapping batches never create duplicate rows.
+- **Incremental extraction.** `06_extract_production.sql` anti-joins against the target table, so an interrupted run resumes without re-paying for completed rows. Extraction provenance (`SPLIT_SECTIONS` vs `FULL_TEXT_FALLBACK`) is recorded per row.
 
 ## Data source
 
