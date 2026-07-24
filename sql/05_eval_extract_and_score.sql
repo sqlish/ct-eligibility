@@ -33,9 +33,11 @@ SELECT
                     'properties': {
                         'min_bmi': {'type': ['number','null']},
                         'max_bmi': {'type': ['number','null']},
-                        'hba1c_threshold': {'type': ['number','null']},
+                        'hba1c_threshold': {'type': ['number','null'],
+                            'description': 'HbA1c threshold as a PERCENTAGE. Convert mmol/mol to percent if the trial reports mmol/mol.'},
                         'requires_diabetes': {'type': 'boolean'},
-                        'excludes_diabetes': {'type': 'boolean'},
+                        'excludes_diabetes': {'type': 'boolean',
+                            'description': 'true if diabetes in ANY form excludes a patient, including when stated as a subtype such as type 1, type 2, or insulin-dependent diabetes.'},
                         'excludes_prior_bariatric_surgery': {'type': 'boolean'},
                         'excludes_pregnancy': {'type': 'boolean'}
                     },
